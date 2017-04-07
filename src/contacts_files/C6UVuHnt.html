@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<!-- saved from url=(0046)https://api-maps.yandex.ua/frame/v1/-/C6UVuHnt -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>map frame</title>
+        
+        <script src="./saved_resource" type="text/javascript"></script>
+        <script src="./all.js.завантаження" type="text/javascript"></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+        <script type="text/javascript">
+            ym.modules
+                .define('mf.hosts', function (provide) {
+                    provide({"maps":"https://yandex.ua/maps/","mapsapi":"https://enterprise.api-maps.yandex.ru/","widget":"https://api-maps.yandex.ru/services/constructor/","search":"https://enterprise.api-maps.yandex.ru/services/search/","assetPath":"/frame/v1/app/"});
+                })
+                .define('mf.ua', function (provide) {
+                    provide({"BrowserBase":"Chromium","BrowserBaseVersion":"56.0.2924.87","BrowserEngine":"WebKit","BrowserEngineVersion":"537.36","BrowserName":"Chrome","BrowserVersion":"56.0.2924","OSFamily":"Windows","OSName":"Windows 10","OSVersion":"10.0","isBrowser":true,"isMobile":false,"x64":true});
+                })
+                .define('mf.env', function (provide) {
+                    provide({"token":"deff372a4587c721ba955e956b49cf8f","lang":"uk","apiLocale":"uk_UA","apikey":"c0807bc7-9435-4cec-a6d6-b3f183fcee6c","yametrika":{"id":146685}});
+                })
+                .define('mf.query', ['mf.util.parseParams'], function (provide, parseParams) {
+                    provide(parseParams('l=map&source=wizgeo&utm_source=serp&utm_medium=maps-desktop&mode=search&text=%D0%A0%D0%BE%D1%81%D1%81%D0%B8%D1%8F%2C%20%D0%9C%D0%BE%D1%81%D0%BA%D0%B2%D0%B0%2C%20%D0%9D%D0%BE%D0%B2%D0%BE%D0%BA%D1%83%D0%B7%D0%BD%D0%B5%D1%86%D0%BA%D0%B0%D1%8F%20%D1%83%D0%BB%D0%B8%D1%86%D0%B0%2C%2044&sll=37.635188%2C55.731415&sspn=0.020428%2C0.006248&ll=37.635280%2C55.731551&z=18&ol=geo&ouri=ymapsbm1%3A%2F%2Fgeo%3Fll%3D37.635%252C55.731%26spn%3D0.001%252C0.001%26text%3D%25D0%25A0%25D0%25BE%25D1%2581%25D1%2581%25D0%25B8%25D1%258F%252C%2520%25D0%259C%25D0%25BE%25D1%2581%25D0%25BA%25D0%25B2%25D0%25B0%252C%2520%25D0%259D%25D0%25BE%25D0%25B2%25D0%25BE%25D0%25BA%25D1%2583%25D0%25B7%25D0%25BD%25D0%25B5%25D1%2586%25D0%25BA%25D0%25B0%25D1%258F%2520%25D1%2583%25D0%25BB%25D0%25B8%25D1%2586%25D0%25B0%252C%252044'));
+                })
+                .define('mf.preloadedMap', function (provide) {
+                    provide();
+                });
+            ym.ready(function () {
+                ym.modules.require(['mf.main'])
+                    .fail(console.error);
+            }, console.error);
+        </script>
+    </head>
+    <body>
+</body></html>

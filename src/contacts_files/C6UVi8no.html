@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<!-- saved from url=(0046)https://api-maps.yandex.ua/frame/v1/-/C6UVi8no -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>map frame</title>
+        
+        <script src="./saved_resource" type="text/javascript"></script>
+        <script src="./all.js.завантаження" type="text/javascript"></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+        <script type="text/javascript">
+            ym.modules
+                .define('mf.hosts', function (provide) {
+                    provide({"maps":"https://yandex.ua/maps/","mapsapi":"https://enterprise.api-maps.yandex.ru/","widget":"https://api-maps.yandex.ru/services/constructor/","search":"https://enterprise.api-maps.yandex.ru/services/search/","assetPath":"/frame/v1/app/"});
+                })
+                .define('mf.ua', function (provide) {
+                    provide({"BrowserBase":"Chromium","BrowserBaseVersion":"56.0.2924.87","BrowserEngine":"WebKit","BrowserEngineVersion":"537.36","BrowserName":"Chrome","BrowserVersion":"56.0.2924","OSFamily":"Windows","OSName":"Windows 10","OSVersion":"10.0","isBrowser":true,"isMobile":false,"x64":true});
+                })
+                .define('mf.env', function (provide) {
+                    provide({"token":"deff372a4587c721ba955e956b49cf8f","lang":"uk","apiLocale":"uk_UA","apikey":"c0807bc7-9435-4cec-a6d6-b3f183fcee6c","yametrika":{"id":146685}});
+                })
+                .define('mf.query', ['mf.util.parseParams'], function (provide, parseParams) {
+                    provide(parseParams('l=map&source=wizgeo&utm_source=serp&utm_medium=maps-desktop&mode=search&where=37.536365%2C55.836003&ll=37.536837%2C55.836085&z=17&ol=biz&oid=1710260912'));
+                })
+                .define('mf.preloadedMap', function (provide) {
+                    provide();
+                });
+            ym.ready(function () {
+                ym.modules.require(['mf.main'])
+                    .fail(console.error);
+            }, console.error);
+        </script>
+    </head>
+    <body>
+</body></html>

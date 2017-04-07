@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<!-- saved from url=(0027)http://flowerscaffe.ru/cart -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	
+	<title>Корзина</title>
+	
+	<meta name="description" content="">
+	<meta name="keywords" content="">
+    <meta name="viewport" content="width=1190, initial-scale=0.3">
+    <meta name="format-detection" content="telephone=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <meta name="google-site-verification" content="bPdLZmieuDvHx-QxD9AKvoWfqoxUbWLRsdhKB6bcqy0">
+    <meta name="google-site-verification" content="SGR04OkhjzIBHbSK7DW6naVjVp12bzB1jb81zCMZtSY">
+    
+	
+	
+	
+	<link href="./cart_files/bootstrap.min.css" rel="stylesheet">
+    
+	<link href="http://flowerscaffe.ru/design/default_2/images/favicon.ico" rel="icon" type="image/x-icon">
+	<link href="http://flowerscaffe.ru/design/default_2/images/favicon.ico" rel="shortcut icon" type="image/x-icon">
+
+	
+	<script src="./cart_files/jquery-3.2.0.min.js.завантаження"></script>
+
+	
+	
+	
+	<script type="text/javascript" src="./cart_files/ctrlnavigate.js.завантаження"></script>
+
+	
+	
+
+	
+	<script src="./cart_files/jquery.fitvids.js.завантаження"></script>
+	<script src="./cart_files/jquery.easing.1.3.js.завантаження"></script>
+	<script src="./cart_files/jquery.bxslider.js.завантаження"></script>
+	<script src="./cart_files/jquery.maskedinput.min.js.завантаження"></script>
+	<script src="./cart_files/jquery.selectbox.js.завантаження"></script>
+	<script src="./cart_files/jquery-ui.min.js.завантаження"></script>
+	<script src="./cart_files/jquery.cookie.js.завантаження"></script>
+	<script src="./cart_files/customslider.js.завантаження"></script>
+	<script src="./cart_files/bootstrap.min.js.завантаження"></script>
+	<script src="./cart_files/flowers.js.завантаження"></script>
+	
+	<link rel="stylesheet" href="./cart_files/jquery.selectbox.css">
+	<link rel="stylesheet" href="./cart_files/jquery-ui.min.css">
+	<link rel="stylesheet" href="./cart_files/style.css">
+
+	
+	<script src="./cart_files/baloon.js.завантаження" type="text/javascript"></script>
+	<link href="./cart_files/baloon.css" rel="stylesheet" type="text/css">
+
+	
+	<script>let_start = '58e7ac40e8de8';</script>
+	<script src="./cart_files/jquery.autocomplete-min.js.завантаження"></script>
+	
+	<script>
+	$(function() {
+		//  Автозаполнитель поиска
+		$(".input_search").autocomplete({
+			serviceUrl:'/ajax/search_products.php',
+			minChars:1,
+			noCache: false,
+			onSelect:
+				function(suggestion){
+					 $(".input_search").closest('form').submit();
+				},
+			formatResult:
+				function(suggestion, currentValue){
+					var reEscape = new RegExp('(\\' + ['/', '.', '*', '+', '?', '|', '(', ')', '[', ']', '{', '}', '\\'].join('|\\') + ')', 'g');
+					var pattern = '(' + currentValue.replace(reEscape, '\\$1') + ')';
+	  				return (suggestion.data.image?"<img alt='' align='absmiddle' src='"+suggestion.data.image+"'> ":'') + suggestion.value.replace(new RegExp(pattern, 'gi'), '<strong>$1<\/strong>');
+				}
+		});
+	});
+	</script>
+	<!-- Facebook Pixel Code -->
+	<script>
+	!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+	n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+	n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+	t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+	document,'script','https://connect.facebook.net/en_US/fbevents.js');
+	fbq('init', '341525229368729'); // Insert your pixel ID here.
+	fbq('track', 'PageView');
+	</script>
+	<!-- Facebook Pixel Code -->
+	
+</head>
+<body>
+<noscript><img height="1" width="1" style="display:none" src="./cart_files/tr"></noscript>
+<section class="head">
+	<div class="subsection">
+		<nav>
+							<a class="menu_element" href="http://flowerscaffe.ru/about_company">О компании</a>
+							<a class="menu_element" href="http://flowerscaffe.ru/dostavka">Доставка</a>
+							<a class="menu_element" href="http://flowerscaffe.ru/oplata">Оплата</a>
+							<a class="menu_element" href="http://flowerscaffe.ru/contacts">Контакты</a>
+						<a class="menu_element" href="http://flowerscaffe.ru/blog/">Акции</a>
+		</nav>
+		<a class="logo" href="http://flowerscaffe.ru/"><img alt="" src="./cart_files/logo_flowers_caffe.svg"></a>
+		<div class="pictograms">
+			<div class="phone_number"><a href="tel:+79259743402">+7 (495) 290 01 94</a></div>
+			<form method="get" action="http://flowerscaffe.ru/search"><input type="text" name="s" placeholder="Введите запрос" value="" class="input_search" id="input_search"></form>
+			<a id="search_button" href="http://flowerscaffe.ru/search"><img alt="" src="./cart_files/lens.svg"></a>
+			<a href="http://flowerscaffe.ru/cart"><img alt="" src="./cart_files/cart.svg">
+			<span class="cart_counter">1</span></a>
+			<div class="contact_icons content">
+				<a href="https://www.instagram.com/flowerscaffe/" target="_blank" alt="ig"><img class="hovered" src="./cart_files/inst.svg"><img src="./cart_files/insta.svg"></a>
+				
+				<a href="whatsapp://send?text=%D0%94%D0%BE%D0%B1%D1%80%D1%8B%D0%B9 %D0%B4%D0%B5%D0%BD%D1%8C!..&amp;phone=+79259743402" alt="wu"><img class="hovered" src="./cart_files/whats.svg"><img src="./cart_files/whatsapp.svg"><span class="smallphone">+79259743402</span></a>
+			</div>
+		</div>
+	</div>
+	<div class="serv_menu content">
+		<div class="submenu">
+			<ul>
+				<li>
+					<a href="http://flowerscaffe.ru/search/allproducts" class="active">Все товары</a>
+					<span>|</span>
+				</li>
+								<li data-catid="169"><a href="http://flowerscaffe.ru/catalog/vip">VIP</a>
+								
+				</li>
+								<li data-catid="168"><a href="http://flowerscaffe.ru/catalog/srednyaya-tsena">Средняя цена</a>
+								
+				</li>
+								<li data-catid="170"><a href="http://flowerscaffe.ru/catalog/nedorogie">Недорогие</a>
+								
+				</li>
+								<li data-catid="157"><a href="http://flowerscaffe.ru/catalog/tsvety-v-korobke">Цветы в коробке</a>
+								
+				</li>
+								<li data-catid="151"><a href="http://flowerscaffe.ru/catalog/flowers_in_cart">Цветы в корзине</a>
+								
+				</li>
+								<li data-catid="174"><a href="http://flowerscaffe.ru/catalog/svadebnye-bukety">Свадебные букеты</a>
+								
+				</li>
+								<li data-catid="171"><a href="http://flowerscaffe.ru/catalog/filtr-po-tipu-tsvetov">Фильтр по типу цветов</a>
+											<ul class="inner">
+											<li><a href="http://flowerscaffe.ru/catalog/rozy">Розы</a>
+							</li>
+											<li><a href="http://flowerscaffe.ru/catalog/tyulpany">Тюльпаны</a>
+							</li>
+											<li><a href="http://flowerscaffe.ru/catalog/podsolnuhi">Подсолнухи</a>
+							</li>
+											<li><a href="http://flowerscaffe.ru/catalog/piony">Пионы</a>
+							</li>
+											<li><a href="http://flowerscaffe.ru/catalog/gvozdiki">Гвоздики</a>
+							</li>
+											<li><a href="http://flowerscaffe.ru/catalog/kally">Каллы</a>
+							</li>
+											<li><a href="http://flowerscaffe.ru/catalog/freziya">Фрезия</a>
+							</li>
+											<li><a href="http://flowerscaffe.ru/catalog/siren">Сирень</a>
+							</li>
+											<li><a href="http://flowerscaffe.ru/catalog/alstromerii">Альстромерии</a>
+							</li>
+											<li><a href="http://flowerscaffe.ru/catalog/gortenzii">Гортензии</a>
+							</li>
+											<li><a href="http://flowerscaffe.ru/catalog/hrizantemy">Хризантемы</a>
+							</li>
+											<li><a href="http://flowerscaffe.ru/catalog/mimoza">Мимоза</a>
+							</li>
+											<li><a href="http://flowerscaffe.ru/catalog/orhidei">Орхидеи</a>
+							</li>
+						</ul>
+	
+				</li>
+								
+			</ul>
+		</div>
+	</div>
+</section>
+
+
+
+
+<section class="cart_section">
+<div class="content">
+	<div class="switcher_block">
+		<div class="switches">
+			<!-- <div class="switch active">Физическое лицо</div>
+			<div class="switch">Юридическое лицо</div> -->
+		</div>
+		<a href="http://flowerscaffe.ru/">Назад</a>
+	</div>
+	<form action="http://flowerscaffe.ru/cart" method="post" id="buyform">
+		<input type="hidden" name="checkout" value="1">
+		<div class="requisites">
+			<h2>Заказчик</h2>
+			<div class="subblock">Имя<input type="text" name="name" required="" autofocus=""></div>
+			<div class="subblock">Телефон<input type="text" name="phone" placeholder="+7 (495) 000-00-00" required=""></div>
+			<div class="subblock">E-mail<input type="text" name="email" placeholder="email@mail.com"></div>
+		</div>
+		<div class="requisites">
+			<h2>Получатель</h2>
+			<div class="subblock">Имя<input type="text" name="name_addressee" required="" autofocus=""></div>
+			<div class="subblock">Телефон<input type="text" name="phone_addressee" placeholder="+7 (495) 000-00-00" required=""></div>
+			<div class="subblock">Адрес получателя<input type="text" name="point_addressee"></div>
+		</div>
+		<script>$('[name="phone"]').mask('+7 (999) 999-99-99')</script>
+		<script>$('[name="phone_addressee"]').mask('+7 (999) 999-99-99')</script>
+		<div class="choose_delivery">
+			<h2>Дата и время доставки</h2>
+			<div class="requisites">
+				<div class="subblock">Дата доставки<input type="date" name="delivery_time" required=""></div>
+				<div class="subblock">Время доставки<input type="time" name="delivery_time" required=""></div>
+			</div>
+			<h2>Доставка и способ оплаты</h2>
+			<div class="selects">
+				<div class="subblock">Ваш регион<select name="region">
+						<!-- <option value="Москва и область" selected>Москва и Московская область</option><option value="Регионы России">Регионы России</option> -->
+						<option value="Москва в пределах МКАД" selected="">Москва в пределах МКАД</option>
+						<option value="Москва за МКАД (уточнить стоимость доставки)">Москва за МКАД (стоимость уточняйте у менеджера)</option>
+				</select></div>
+				<div class="subblock">Тип доставки<select name="delivery_id">
+										<option value="1" data-free="0.00" data-price="0.00">Курьерская доставка</option>
+									</select></div>
+				<!-- <div class="subblock">Тип оплаты<select name="payment_method"><option value="0" selected>Наличные</option><option value="1">Яндес касса</option></select></div> -->
+			</div>
+			<div class="texts">
+				
+				<div>Комментарий к заказу<textarea name="comment"></textarea></div>
+					<div>Промокод<textarea name="coupon_code"></textarea></div>
+			</div><br>
+			<div class="button_wrap"><input type="submit" class="button filled" value="Оформить заказ"></div>
+		</div>
+		<div class="cart_products">
+			<h2>Подтверждение и скидки</h2>
+			<table>
+				<thead>
+					<tr>
+						<th>Фото товара</th>
+						<th>Товары</th>
+						<th>Цена</th>
+						<th>Кол-во</th>
+						<th colspan="2">Общая стоимость</th>
+					</tr>
+				</thead>
+																<tbody><tr data-price="13900.00" data-vid="1740">
+					<td><a href="http://flowerscaffe.ru/products/rozovaya-korzina"><img src="./cart_files/dreamstime_m_60714821.80x80.jpg" alt="•"></a></td>
+					<td class="name"><a href="http://flowerscaffe.ru/products/rozovaya-korzina"><h4>Розовая корзина</h4></a></td>
+					<td>13 900 <span class="rouble">i</span></td>
+					<td class="count"><input type="text" maxlength="3" value="1"></td>
+					<td class="summ"></td>
+					<td class="delete_item" title="Удалить товар из корзины">✕</td>
+				</tr>
+							</tbody></table>
+			<div class="buttons_area">
+				<input type="button" value="Пересчитать" class="button filled" onclick="cart_recalculate()">
+				<input type="submit" value="Оформить заказ" class="button normal">
+				<div class="total">
+					<div class="products_cost"><label>Товаров на:</label><span class="val"></span></div>
+					<div class="delivery_cost"><label>Доставка:</label><span class="val"></span></div>
+					<div class="overall"><label>Итого</label><span class="val"></span></div>
+				</div>
+			</div>
+		</div>
+	</form>
+</div>
+<script>
+
+//Пересчёт всех сумм в корзине
+function cart_recalculate()
+{
+	var total_summ = total_amount = 0;
+	$('.cart_products tbody tr').each(function() {
+		var sum = parseInt(this.getAttribute('data-price')) * parseInt($('.count input', this).val());
+		total_summ += sum;
+		total_amount += parseInt($('.count input', this).val());
+
+		$('.summ', this).html(number_format(sum) + ' <span class="rouble">i</span>');
+	});
+	$('.buttons_area .products_cost .val').html(number_format(total_summ) + ' <span class="rouble">i</span>');
+
+	var delivery_opt = $('[name="delivery_id"]')[0].options[$('[name="delivery_id"]')[0].selectedIndex],
+		free_mincost = delivery_opt.getAttribute('data-free');
+	if (free_mincost <= total_summ)
+		delivery_summ = 0;
+	else
+		delivery_summ = parseInt(delivery_opt.getAttribute('data-price'));
+
+	$('.buttons_area .delivery_cost .val').html(delivery_summ ? number_format(delivery_summ) + ' <span class="rouble">i</span>' : 'бесплатно');
+	$('.buttons_area .overall .val').html(number_format(total_summ + delivery_summ) + ' <span class="rouble">i</span>');
+	$('.cart_counter').html(total_amount);
+
+	var cart = [];
+	$('.cart_products table tbody tr').each(function() {
+		cart.push({
+			'id': this.getAttribute('data-vid'),
+			'amount': $('.count input', this).val()
+		});
+	});
+	$.post('/ajax/update_cart.php', {'cart': JSON.stringify(cart)}, function(ans) {
+		if (!$('.cart_products table tbody tr').length) location.href = location.href;
+	}, 'text');
+}
+$(function() {
+	$('.choose_delivery select').selectbox({'speed': 100});
+
+	//Удаление товара из списка
+	$('.cart_products .delete_item').click(function() {
+		$(this).closest('tr').remove();
+		cart_recalculate();
+	});
+
+	$('.cart_products table .count input').on('blur', function() {cart_recalculate();});
+
+	$('.cart_products .count input').on('wheel', function(e) {
+		e.preventDefault();
+		if (e.originalEvent.deltaY)
+		{
+			if (Math.sign(e.originalEvent.deltaY) > 0)
+			{
+				this.value = parseInt(this.value) + 1;
+				if (this.value > 50) this.value = 50;
+			}
+			else
+			{
+				this.value = parseInt(this.value) - 1;
+				if (this.value < 2) this.value = 1;
+			}
+			cart_recalculate();
+		}
+	});
+
+	cart_recalculate();
+});
+
+
+fbq('track', 'AddToCart', {
+	value: 3.50,
+	currency: 'USD'
+});
+
+</script>
+</section>
+
+<div class="bg"></div>
+<footer>
+	<div class="main">
+		<div class="content">
+			<div class="links">
+							<a class="menu_element" href="http://flowerscaffe.ru/about_company">О компании</a>
+							<a class="menu_element" href="http://flowerscaffe.ru/dostavka">Доставка</a>
+							<a class="menu_element" href="http://flowerscaffe.ru/oplata">Оплата</a>
+							<a class="menu_element" href="http://flowerscaffe.ru/contacts">Контакты</a>
+						<a class="menu_element" href="http://flowerscaffe.ru/vozvrat">Возврат</a>
+			</div>
+		</div>
+	</div>
+	<div class="info content">
+		<div>
+			<div class="title">Режим работы:</div>
+			<div>Без выходных: с 10:00 до 22:00</div>
+		</div>
+		<div class="middle">
+			<div class="logo"></div>
+			<div class="socials">
+				<a href="https://www.instagram.com/flowerscaffe/" target="blank" class="insta"></a>
+				
+				<a href="whatsapp://send?abidtext=%D0%94%D0%BE%D0%B1%D1%80%D1%8B%D0%B9 %D0%B4%D0%B5%D0%BD%D1%8C!..&amp;phone=+79259743402" class="call"></a>
+			</div>
+		</div>
+		<div>
+			<div class="phone">
+				+7 (495) 290-01-94
+			</div>
+			<div class="title">Контакты:</div>
+			<div>info@flowers-cafe.ru</div>
+			<div>Адрес: г. Москва,</div>
+			<div>ул. Большая Академическая, д. 49, кор.1</div>
+			<div>ул. Новокузнецкая, д. 44</div>
+		</div>
+	</div>
+	<div class="©"><div class="content">© 2017 | flowers-cafe.ru. Все права защищены</div></div>
+</footer>
+<div class="overlay"></div>
+<aside class="callback">
+	<img class="close_button" src="./cart_files/close_button.svg" alt="X">
+	<h3>Заказать обратный звонок</h3>
+	<form method="post" action="http://flowerscaffe.ru/sendmail.php" id="callback_form">
+	<label>Как к вам обращаться?</label>
+	<input type="text" name="username" value="" id="username" required="" placeholder="Евгений">
+	<label>Контактный номер телефона</label>
+	<input type="text" name="phone" value="" id="phone" placeholder="+7(926)598-19-11">
+	<input type="hidden" name="code" value="58e7ac40e8de8">
+	<div class="button_wrap"><input type="submit" class="button" value="Отправить"></div>
+	</form>
+</aside>
+
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript"> (function (d, w, c) { (w[c] = w[c] || []).push(function() { try { w.yaCounter42777829 = new Ya.Metrika({ id:42777829, clickmap:true, trackLinks:true, accurateTrackBounce:true, webvisor:true }); } catch(e) { } }); var n = d.getElementsByTagName("script")[0], s = d.createElement("script"), f = function () { n.parentNode.insertBefore(s, n); }; s.type = "text/javascript"; s.async = true; s.src = "https://mc.yandex.ru/metrika/watch.js"; if (w.opera == "[object Opera]") { d.addEventListener("DOMContentLoaded", f, false); } else { f(); } })(document, window, "yandex_metrika_callbacks"); </script> <noscript><div><img src="./cart_files/42777829" style="position:absolute; left:-9999px;" alt=""></div></noscript>
+<!-- /Yandex.Metrika counter -->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-91883566-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+<!-- BEGIN JIVOSITE CODE  -->
+<script type="text/javascript">
+(function(){ var widget_id = 'FGi7wMXseJ';var d=document;var w=window;function l(){
+var s = document.createElement('script'); s.type = 'text/javascript'; s.async = true; s.src = '//code.jivosite.com/script/widget/'+widget_id; var ss = document.getElementsByTagName('script')[0]; ss.parentNode.insertBefore(s, ss);}if(d.readyState=='complete'){l();}else{if(w.attachEvent){w.attachEvent('onload',l);}else{w.addEventListener('load',l,false);}}})();</script>
+<!--  END JIVOSITE CODE -->
+
+
+</body></html>
