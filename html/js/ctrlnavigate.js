@@ -1,0 +1,2 @@
+function NavigateThrough(e){if(document.getElementsByClassName&&(window.event&&(e=window.event),e.ctrlKey)){var n=null,t=null;switch(e.keyCode?e.keyCode:e.which?e.which:null){case 37:n=document.getElementsByClassName("prev_page_link")[0];break;case 39:n=document.getElementsByClassName("next_page_link")[0]}n&&n.href&&(document.location=n.href),t&&(document.location=t)}}document.onkeydown=NavigateThrough;
+//# sourceMappingURL=maps/ctrlnavigate.js.map
