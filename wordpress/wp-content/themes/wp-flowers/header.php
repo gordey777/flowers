@@ -22,27 +22,89 @@
 </head>
 <body <?php body_class(); ?>>
 <!-- wrapper -->
-<div class="wrapper">
-  <header role="banner">
-    <div class="inner">
+  <section class="head">
+    <div class="subsection">
+      <nav>
+        <?php wpeHeadNav(); ?>
+      </nav>
 
       <div class="logo">
         <?php if ( is_front_page() && is_home() ){ } else { ?>
           <a href="<?php echo home_url(); ?>">
             <?php  } ?>
-            <img src="<?php echo get_template_directory_uri(); ?>/img/logo.png" alt="<?php wp_title( '' ); ?>" title="<?php wp_title( '' ); ?>" class="logo-img">
+            <img src="<?php echo get_template_directory_uri(); ?>/img/logo_flowers_caffe.svg" alt="<?php wp_title( '' ); ?>" title="<?php wp_title( '' ); ?>" class="logo-img">
             <?php if ( is_front_page() && is_home() ){
             } else { ?>
           </a>
         <?php } ?>
       </div><!-- /logo -->
 
-      <nav class="nav" role="navigation">
-        <?php wpeHeadNav(); ?>
-      </nav><!-- /nav -->
+      <div class="pictograms">
+        <div class="phone_number"><a href="tel:+79259743402">+7 (495) 290 01 94</a></div>
+        <form method="get" action="http://flowerscaffe.ru/search">
+          <input type="text" name="s" placeholder="Введите запрос" value="" class="input_search" id="input_search">
+        </form>
+        <a id="search_button" href="http://flowerscaffe.ru/search"><img alt="" src="<?php echo get_template_directory_uri(); ?>/img/lens.svg"></a>
+        <a href="http://flowerscaffe.ru/cart"><img alt="" src="<?php echo get_template_directory_uri(); ?>/img/cart.svg">
+          <span class="cart_counter hidden">0</span></a>
+        <div class="contact_icons content">
+          <a href="https://www.instagram.com/flowerscaffe/" target="_blank" alt="ig"><img class="hovered" src="<?php echo get_template_directory_uri(); ?>/img/inst.svg"><img src="<?php echo get_template_directory_uri(); ?>/img/insta.svg"></a>
+          <a href="whatsapp://send?text=%D0%94%D0%BE%D0%B1%D1%80%D1%8B%D0%B9 %D0%B4%D0%B5%D0%BD%D1%8C!..&amp;phone=+79259743402" alt="wu"><img class="hovered" src="<?php echo get_template_directory_uri(); ?>/img/whats.svg"><img src="<?php echo get_template_directory_uri(); ?>/img/whatsapp.svg"><span class="smallphone">+79259743402</span></a>
+        </div>
+      </div>
+    </div>
+    <div class="serv_menu content">
+      <div class="submenu">
+        <ul>
+          <li>
+            <a href="http://flowerscaffe.ru/search/allproducts" class="active">Все товары</a>
+            <span>|</span>
+          </li>
+          <li data-catid="169"><a href="http://flowerscaffe.ru/catalog/vip">VIP</a>
+          </li>
+          <li data-catid="168"><a href="http://flowerscaffe.ru/catalog/srednyaya-tsena">Средняя цена</a>
+          </li>
+          <li data-catid="170"><a href="http://flowerscaffe.ru/catalog/nedorogie">Недорогие</a>
+          </li>
+          <li data-catid="157"><a href="http://flowerscaffe.ru/catalog/tsvety-v-korobke">Цветы в коробке</a>
+          </li>
+          <li data-catid="151"><a href="http://flowerscaffe.ru/catalog/flowers_in_cart">Цветы в корзине</a>
+          </li>
+          <li data-catid="174"><a href="http://flowerscaffe.ru/catalog/svadebnye-bukety">Свадебные букеты</a>
+          </li>
+          <li data-catid="171"><a href="http://flowerscaffe.ru/catalog/filtr-po-tipu-tsvetov">Фильтр по типу цветов</a>
+            <ul class="inner">
+              <li><a href="http://flowerscaffe.ru/catalog/rozy">Розы</a>
+              </li>
+              <li><a href="http://flowerscaffe.ru/catalog/tyulpany">Тюльпаны</a>
+              </li>
+              <li><a href="http://flowerscaffe.ru/catalog/podsolnuhi">Подсолнухи</a>
+              </li>
+              <li><a href="http://flowerscaffe.ru/catalog/piony">Пионы</a>
+              </li>
+              <li><a href="http://flowerscaffe.ru/catalog/gvozdiki">Гвоздики</a>
+              </li>
+              <li><a href="http://flowerscaffe.ru/catalog/kally">Каллы</a>
+              </li>
+              <li><a href="http://flowerscaffe.ru/catalog/freziya">Фрезия</a>
+              </li>
+              <li><a href="http://flowerscaffe.ru/catalog/siren">Сирень</a>
+              </li>
+              <li><a href="http://flowerscaffe.ru/catalog/alstromerii">Альстромерии</a>
+              </li>
+              <li><a href="http://flowerscaffe.ru/catalog/gortenzii">Гортензии</a>
+              </li>
+              <li><a href="http://flowerscaffe.ru/catalog/hrizantemy">Хризантемы</a>
+              </li>
+              <li><a href="http://flowerscaffe.ru/catalog/mimoza">Мимоза</a>
+              </li>
+              <li><a href="http://flowerscaffe.ru/catalog/orhidei">Орхидеи</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
 
-    </div><!-- /.inner -->
-  </header><!-- /header -->
 
-  <section role="main">
-    <div class="inner">

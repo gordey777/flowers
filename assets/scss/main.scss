@@ -22,9 +22,55 @@
 @import 'style';
 @import 'baloon';
 
+.headnav {
+  display: inline-block;
 
+  list-style: none;
+  li {
+    display: inline-block;
 
+    margin: 0;
+    padding: 0;
+    a {
+      font-weight: 300;
 
+      display: inline-block;
 
+      margin-right: 17px;
 
+      text-decoration: none;
+      text-transform: uppercase;
 
+      color: #4c4c4c;
+      color: #636363;
+      &.active {
+        cursor: text;
+
+        color: #86ce73;
+      }
+      &:hover {
+        color: #000;
+      }
+      &.active:hover {
+        color: #86ce73;
+      }
+      &.logo img {
+        max-width: 321px;
+        max-height: 155px;
+      }
+    }
+    ~ .pictograms {
+      padding-top: 40px;
+    }
+    &.current_page_item {
+      a {
+        color: #86ce73;
+      }
+    }
+    &:last-child {
+      a {
+        margin-right: 0;
+      }
+    }
+  }
+}
