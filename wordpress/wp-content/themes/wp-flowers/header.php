@@ -41,11 +41,11 @@
 
       <div class="pictograms">
         <div class="phone_number"><a href="tel:+79259743402">+7 (495) 290 01 94</a></div>
-        <form method="get" action="http://flowerscaffe.ru/search">
+        <form method="get" action="#/search">
           <input type="text" name="s" placeholder="Введите запрос" value="" class="input_search" id="input_search">
         </form>
-        <a id="search_button" href="http://flowerscaffe.ru/search"><img alt="" src="<?php echo get_template_directory_uri(); ?>/img/lens.svg"></a>
-        <a href="http://flowerscaffe.ru/cart"><img alt="" src="<?php echo get_template_directory_uri(); ?>/img/cart.svg">
+        <a id="search_button" href="#/search"><img alt="" src="<?php echo get_template_directory_uri(); ?>/img/lens.svg"></a>
+        <a href="#/cart"><img alt="" src="<?php echo get_template_directory_uri(); ?>/img/cart.svg">
           <span class="cart_counter hidden">0</span></a>
         <div class="contact_icons content">
           <a href="https://www.instagram.com/flowerscaffe/" target="_blank" alt="ig"><img class="hovered" src="<?php echo get_template_directory_uri(); ?>/img/inst.svg"><img src="<?php echo get_template_directory_uri(); ?>/img/insta.svg"></a>
@@ -57,48 +57,48 @@
       <div class="submenu">
         <ul>
           <li>
-            <a href="http://flowerscaffe.ru/search/allproducts" class="active">Все товары</a>
+            <a href="#/search/allproducts" class="active">Все товары</a>
             <span>|</span>
           </li>
-          <li data-catid="169"><a href="http://flowerscaffe.ru/catalog/vip">VIP</a>
+          <li data-catid="169"><a href="#/catalog/vip">VIP</a>
           </li>
-          <li data-catid="168"><a href="http://flowerscaffe.ru/catalog/srednyaya-tsena">Средняя цена</a>
+          <li data-catid="168"><a href="#/catalog/srednyaya-tsena">Средняя цена</a>
           </li>
-          <li data-catid="170"><a href="http://flowerscaffe.ru/catalog/nedorogie">Недорогие</a>
+          <li data-catid="170"><a href="#/catalog/nedorogie">Недорогие</a>
           </li>
-          <li data-catid="157"><a href="http://flowerscaffe.ru/catalog/tsvety-v-korobke">Цветы в коробке</a>
+          <li data-catid="157"><a href="#/catalog/tsvety-v-korobke">Цветы в коробке</a>
           </li>
-          <li data-catid="151"><a href="http://flowerscaffe.ru/catalog/flowers_in_cart">Цветы в корзине</a>
+          <li data-catid="151"><a href="#/catalog/flowers_in_cart">Цветы в корзине</a>
           </li>
-          <li data-catid="174"><a href="http://flowerscaffe.ru/catalog/svadebnye-bukety">Свадебные букеты</a>
+          <li data-catid="174"><a href="#/catalog/svadebnye-bukety">Свадебные букеты</a>
           </li>
-          <li data-catid="171"><a href="http://flowerscaffe.ru/catalog/filtr-po-tipu-tsvetov">Фильтр по типу цветов</a>
+          <li data-catid="171"><a href="#/catalog/filtr-po-tipu-tsvetov">Фильтр по типу цветов</a>
             <ul class="inner">
-              <li><a href="http://flowerscaffe.ru/catalog/rozy">Розы</a>
+              <li><a href="#/catalog/rozy">Розы</a>
               </li>
-              <li><a href="http://flowerscaffe.ru/catalog/tyulpany">Тюльпаны</a>
+              <li><a href="#/catalog/tyulpany">Тюльпаны</a>
               </li>
-              <li><a href="http://flowerscaffe.ru/catalog/podsolnuhi">Подсолнухи</a>
+              <li><a href="#/catalog/podsolnuhi">Подсолнухи</a>
               </li>
-              <li><a href="http://flowerscaffe.ru/catalog/piony">Пионы</a>
+              <li><a href="#/catalog/piony">Пионы</a>
               </li>
-              <li><a href="http://flowerscaffe.ru/catalog/gvozdiki">Гвоздики</a>
+              <li><a href="#/catalog/gvozdiki">Гвоздики</a>
               </li>
-              <li><a href="http://flowerscaffe.ru/catalog/kally">Каллы</a>
+              <li><a href="#/catalog/kally">Каллы</a>
               </li>
-              <li><a href="http://flowerscaffe.ru/catalog/freziya">Фрезия</a>
+              <li><a href="#/catalog/freziya">Фрезия</a>
               </li>
-              <li><a href="http://flowerscaffe.ru/catalog/siren">Сирень</a>
+              <li><a href="#/catalog/siren">Сирень</a>
               </li>
-              <li><a href="http://flowerscaffe.ru/catalog/alstromerii">Альстромерии</a>
+              <li><a href="#/catalog/alstromerii">Альстромерии</a>
               </li>
-              <li><a href="http://flowerscaffe.ru/catalog/gortenzii">Гортензии</a>
+              <li><a href="#/catalog/gortenzii">Гортензии</a>
               </li>
-              <li><a href="http://flowerscaffe.ru/catalog/hrizantemy">Хризантемы</a>
+              <li><a href="#/catalog/hrizantemy">Хризантемы</a>
               </li>
-              <li><a href="http://flowerscaffe.ru/catalog/mimoza">Мимоза</a>
+              <li><a href="#/catalog/mimoza">Мимоза</a>
               </li>
-              <li><a href="http://flowerscaffe.ru/catalog/orhidei">Орхидеи</a>
+              <li><a href="#/catalog/orhidei">Орхидеи</a>
               </li>
             </ul>
           </li>

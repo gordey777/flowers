@@ -414,3 +414,8 @@ function generate_pages()
 
 	$('.pages').html(html);
 }
+
+$(document).ready(function(){
+	$.datetimepicker.setLocale('ru');
+	$('#datetimepicker').datetimepicker();
+});

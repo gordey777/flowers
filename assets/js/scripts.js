@@ -20,4 +20,65 @@ if (typeof jQuery === 'undefined') {
 } else {
   console.log('jQuery has loaded');
 }
-// Place any jQuery/helper plugins in here.
+
+
+
+  jQuery(document).ready(function() {
+var $lensSize = (jQuery('#image-block').width()) * .7;
+    jQuery('#bigpic').elevateZoom({
+    zoomType: 'lens',
+    lensShape: 'round',
+    lensSize: $lensSize,
+          scrollZoom: true,
+        });
+
+      function applyElevateZoom() {
+        var src = jQuery('.thickbox.shown').attr('href');
+        var bigimage = jQuery('.fancybox.shown').attr('href');
+        jQuery('#bigpic').elevateZoom({
+    zoomType: 'lens',
+    lensShape: 'round',
+    lensSize: $lensSize,
+          scrollZoom: true,
+        });
+      }
+      jQuery(document).on('mouseover', '#views_block a', function() {
+        displayImage(jQuery(this));
+      });
+
+      jQuery('#views_block a').hover(function() {
+        restartElevateZoom();
+      });
+
+      function restartElevateZoom() {
+        jQuery(".zoomContainer").remove();
+        applyElevateZoom();
+      };
+
+      function displayImage(domAAroundImgThumb, no_animation) {
+        if (typeof(no_animation) == 'undefined')
+          no_animation = false;
+        if (domAAroundImgThumb.attr('href')) {
+          var new_src = domAAroundImgThumb.attr('href').replace('thickbox', 'large');
+          var new_title = domAAroundImgThumb.attr('title');
+          var new_href = domAAroundImgThumb.attr('href');
+          if (jQuery('#bigpic').attr('src') != new_src) {
+            jQuery('#bigpic').attr({
+              'src': new_src,
+              'alt': new_title,
+              'title': new_title
+            }).load(function() {
+              if (typeof(jqZoomEnabled) !== 'undefined' && jqZoomEnabled)
+                jQuery(this).attr('rel', new_href);
+            });
+          }
+          jQuery('#views_block slide').removeClass('active');
+          jQuery(this).parent(".slide").addClass('active');
+        }
+      }
+
+
+  });
+
+
+

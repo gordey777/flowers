@@ -3,11 +3,11 @@
     <div class="main">
       <div class="content">
         <div class="links">
-          <a class="menu_element" href="http://flowerscaffe.ru/about_company">О компании</a>
-          <a class="menu_element" href="http://flowerscaffe.ru/dostavka">Доставка</a>
-          <a class="menu_element" href="http://flowerscaffe.ru/oplata">Оплата</a>
-          <a class="menu_element" href="http://flowerscaffe.ru/contacts">Контакты</a>
-          <a class="menu_element" href="http://flowerscaffe.ru/vozvrat">Возврат</a>
+          <a class="menu_element" href="#/about_company">О компании</a>
+          <a class="menu_element" href="#/dostavka">Доставка</a>
+          <a class="menu_element" href="#/oplata">Оплата</a>
+          <a class="menu_element" href="#/contacts">Контакты</a>
+          <a class="menu_element" href="#/vozvrat">Возврат</a>
         </div>
       </div>
     </div>
@@ -42,7 +42,7 @@
   <aside class="callback">
     <img class="close_button" src="<?php echo get_template_directory_uri(); ?>/img/close_button.svg" alt="X">
     <h3>Заказать обратный звонок</h3>
-    <form method="post" action="http://flowerscaffe.ru/sendmail.php" id="callback_form">
+    <form method="post" action="#/sendmail.php" id="callback_form">
       <label>Как к вам обращаться?</label>
       <input type="text" name="username" value="" id="username" required="" placeholder="Евгений">
       <label>Контактный номер телефона</label>
@@ -59,7 +59,8 @@
     <?php wp_footer(); ?>
 
 
-  <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/ctrlnavigate.js"></script>
+  <script src="<?php echo get_template_directory_uri(); ?>/js/jquery.elevatezoom.min.js" type="text/javascript"></script>
+  <script src="<?php echo get_template_directory_uri(); ?>/js/ctrlnavigate.js" type="text/javascript"></script>
   <script src="<?php echo get_template_directory_uri(); ?>/js/jquery.fitvids.js"></script>
   <script src="<?php echo get_template_directory_uri(); ?>/js/jquery.easing.1.3.js"></script>
   <script src="<?php echo get_template_directory_uri(); ?>/js/jquery.bxslider.js"></script>
