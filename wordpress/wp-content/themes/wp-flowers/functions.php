@@ -70,7 +70,7 @@ function my_remove_recent_comments_style() {
 \*------------------------------------*/
 
 if (!isset($content_width)) {
-  $content_width = 980;
+  $content_width = 1190;
 }
 
 if (function_exists('add_theme_support')) {
@@ -131,7 +131,7 @@ function wpeFootNav() {
     'after'           => '',
     'link_before'     => '',
     'link_after'      => '',
-    'items_wrap'      => '<ul class="footernav">%3$s</ul>',
+    'items_wrap'      => '<ul class="footernav links">%3$s</ul>',
     'depth'           => 0,
     'walker'          => ''
     )
@@ -182,17 +182,17 @@ if (function_exists('register_sidebar')) {
     'after_title' => '</h6>'
   ));
   //  Define Sidebar Widget Area 2. If your want to display more widget - uncoment this
-  /*
+
   register_sidebar(array(
-    'name' => __('Блок виджетов #2', 'wpeasy'),
-    'description' => __('Description for this widget-area...', 'wpeasy'),
-    'id' => 'widgetarea2',
-    'before_widget' => '<div id="%1$s" class="widget %2$s">',
-    'after_widget' => '</div>',
-    'before_title' => '<h6>',
-    'after_title' => '</h6>'
+    'name' => __('Фильтры товаров', 'wpeasy'),
+    'description' => __('Фильры товаров на страницах', 'wpeasy'),
+    'id' => 'widget_filters',
+    'before_widget' => '<div id="%1$s" class="filter_block %2$s"><section class="filter price">',
+    'after_widget' => '</section></div>',
+    'before_title' => '<h3>',
+    'after_title' => '</h3>'
   ));
-  */
+
 }
 
 //  Custom Excerpts
@@ -654,13 +654,52 @@ function disable_emojicons_tinymce( $plugins ) {
 }
 
 
+add_theme_support( 'woocommerce' );
+
+remove_action( 'woocommerce_before_main_content', 'woocommerce_output_content_wrapper', 10);
+remove_action( 'woocommerce_after_main_content', 'woocommerce_output_content_wrapper_end', 10);
+
+add_action('woocommerce_before_main_content', 'my_theme_wrapper_start', 10);
+add_action('woocommerce_after_main_content', 'my_theme_wrapper_end', 10);
+
+function my_theme_wrapper_start() {
+  echo '<section id="main" class="section">';
+}
+
+function my_theme_wrapper_end() {
+  echo '</section>';
+}
+
 add_action( 'after_setup_theme', 'woocommerce_support' );
 function woocommerce_support() {
     add_theme_support( 'woocommerce' );
 }
 
 
-//add_filter( 'woocommerce_enqueue_styles', '__return_empty_array' );
+//DISABLE COUNT SELETOR
+add_filter( 'woocommerce_is_sold_individually', 'wc_remove_all_quantity_fields', 10, 2 );
+function wc_remove_all_quantity_fields( $return, $product ) {
+switch ( $product->product_type ) :
+case "variable":
+return true;
+break;
+case "grouped":
+return true;
+break;
+case "external":
+return true;
+break;
+default: // simple product type
+return true;
+break;
+endswitch;
+}
+
+remove_action ( 'woocommerce_before_shop_loop', 'woocommerce_result_count', 20 );
+
+
+//woocommerse styles
+add_filter( 'woocommerce_enqueue_styles', '__return_empty_array' );
 
 /*function your_theme_woocommerce_scripts() {
   wp_enqueue_style( 'custom-woocommerce-style', get_template_directory_uri() . '/css/woocommerce-custom.css' );

@@ -91,6 +91,7 @@ nav {
   }
 }
 
+
 footer .main .content .links .menu_element {
   font-weight: 300;
 
@@ -824,12 +825,12 @@ nav {
 
 /* Одиночный блок с товаром */
 
-.product {
+/* .product {
   position: relative;
 
   display: inline-block;
   overflow: hidden;
-  /*height: 335px;*/
+  height: 335px;
 
   width: 269px;
   margin: 0 10px 30px;
@@ -937,7 +938,7 @@ nav {
     }
   }
   .name {
-    /*height: 81px;*/
+    height: 81px;
     font-size: 15px;
 
     overflow: hidden;
@@ -976,7 +977,7 @@ nav {
       margin-right: 100px;
     }
   }
-}
+} */
 
 /*.product:hover .name { opacity: 0; }*/
 
@@ -1274,7 +1275,7 @@ footer {
       width: 330px;
       height: 130px;
 
-      background-image: url('../img/footerlogo.svg');
+      background-image: url('../img/NiceFlowers_logo.png');
       background-size: cover;
     }
     .socials {
@@ -1352,7 +1353,7 @@ footer {
 }
 
 /* Хлебные крошки */
-
+.woocommerce-breadcrumb,
 .breadcrumbs {
   font-size: 14px;
 
@@ -2914,6 +2915,10 @@ textarea {
                 justify-content: space-between;
       }
       .button {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+
         width: 47%;
         padding: 0 40px;
 
@@ -2939,6 +2944,7 @@ textarea {
       }
     }
   }
+  .price_label,
   #price_val {
     font-size: 18px;
 
@@ -2951,14 +2957,15 @@ textarea {
     white-space: nowrap;
 
     color: #2e2e2e;
-    &:after {
-      font-family: 'rouble';
+    /*     &:after {
+  font-family: 'rouble';
 
-      margin-left: 5px;
+  margin-left: 5px;
 
-      content: 'i';
-    }
+  content: 'i';
+} */
   }
+  .price_slider,
   #price_slider {
     height: 4px;
     margin: 0 20px;

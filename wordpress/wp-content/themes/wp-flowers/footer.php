@@ -2,13 +2,8 @@
   <footer>
     <div class="main">
       <div class="content">
-        <div class="links">
-          <a class="menu_element" href="#/about_company">О компании</a>
-          <a class="menu_element" href="#/dostavka">Доставка</a>
-          <a class="menu_element" href="#/oplata">Оплата</a>
-          <a class="menu_element" href="#/contacts">Контакты</a>
-          <a class="menu_element" href="#/vozvrat">Возврат</a>
-        </div>
+        <?php wpeFootNav() ?>
+
       </div>
     </div>
     <div class="info content">

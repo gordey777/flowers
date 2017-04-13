@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the Plugins - WooCommerce - Stable (latest release) package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2017-04-08 09:14:10+0000\n"
+"PO-Revision-Date: 2017-04-10 14:51:03+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -255,6 +255,14 @@ msgstr "Фиксированная скидка на сумму корзины"
 msgid "Percentage discount"
 msgstr "Процент скидки"
 
+#: includes/wc-core-functions.php:1440
+msgid "The class <code>%s</code> provided by woocommerce_logging_class filter must implement <code>WC_Logger_Interface</code>."
+msgstr "Класс <code>%s</code> обеспечивается woocommerce_logging_class фильтр должен реализовать <code>WC_Logger_Interface</code>,"
+
+#: includes/wc-core-functions.php:346
+msgid "Iranian toman"
+msgstr "персидский туман"
+
 #: includes/wc-core-functions.php:194
 msgid "%s does not exist."
 msgstr "%s не существует."
@@ -313,6 +321,10 @@ msgstr[0] "Вы получили лог-сообщения от WooCommerce:"
 msgstr[1] "Вы получили лог-сообщения от WooCommerce:"
 msgstr[2] "Вы получили лог-сообщения от WooCommerce:"
 
+#: includes/legacy/abstract-wc-legacy-product.php:72
+msgid "Product properties should not be accessed directly."
+msgstr "Свойства продукта не должны быть доступны непосредственно."
+
 #. translators: 1: site name 2: product name 3: order number
 #: includes/gateways/simplify-commerce/class-wc-addons-gateway-simplify-commerce.php:431
 msgid "%1$s - Pre-order for \"%2$s\" (Order #%3$s)"
@@ -331,9 +343,17 @@ msgstr "Опционально введите URL изображения с ра
 msgid "Image url"
 msgstr "URL изображения"
 
+#: includes/gateways/paypal/includes/settings-paypal.php:110
+msgid "Optionally enter the name of the page style you wish to use. These are defined within your PayPal account. This affects classic PayPal checkout screens."
+msgstr "При желании введите имя стиля страницы, который вы хотите использовать. Они определены в вашем аккаунте PayPal. Это влияет на классические экраны проверочного PayPal."
+
 #: includes/gateways/paypal/includes/settings-paypal.php:51
 msgid "Log PayPal events, such as IPN requests, inside %s"
 msgstr "Журналировать события PayPal, такие как IPN запросы, внутри %s"
+
+#: includes/gateways/paypal/includes/settings-paypal.php:44
+msgid "PayPal sandbox can be used to test payments. Sign up for a <a href=\"%s\">developer account</a>."
+msgstr "PayPal песочница может быть использована для проверки платежей. Подпишитесь на<a href=\"%s\">аккаунт разработчика</a>,"
 
 #: includes/gateways/paypal/includes/class-wc-gateway-paypal-ipn-handler.php:261
 msgid "Payment for cancelled order %s received"
@@ -600,7 +620,7 @@ msgstr "Обзоры товаров не поддерживают удалени
 
 #: includes/api/v1/class-wc-rest-product-reviews-controller.php:276
 msgid "Creating product review failed."
-msgstr "Не удалось создать обзор продукта."
+msgstr "Не удалось создать обзор товара."
 
 #: includes/api/v1/class-wc-rest-product-attributes-controller.php:373
 msgid "Could not edit the attribute."
@@ -5430,7 +5450,7 @@ msgstr "Форум сообщества"
 
 #: includes/admin/class-wc-admin-help.php:241
 msgid "For further assistance with WooCommerce core you can use the <a href=\"%1$s\">community forum</a>. If you need help with premium extensions sold by WooCommerce, please <a href=\"%2$s\">use our helpdesk</a>."
-msgstr "Для получения дополнительной поддержки по ядру WooCommerce, вы можете посещать %1$sфорум сообщества%2$s. Если вам требуется помощь с премиум-расширениями, поставляемыми WooThemes, пожалуйста %3$sобращайтесь в нашу службу поддержки%4$s."
+msgstr "Для получения дополнительной поддержки по ядру WooCommerce, вы можете посещать <a href=\"%1$s\">форум сообщества</a>. Если вам требуется помощь с премиум-расширениями, поставляемыми WooThemes, пожалуйста <a href=\"%2$s\">обращайтесь в нашу службу поддержки</a>."
 
 #: includes/admin/class-wc-admin-help.php:233
 #: includes/admin/class-wc-admin-help.php:235

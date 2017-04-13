@@ -81,7 +81,23 @@ if ( ! defined( 'ABSPATH' ) ) {
       </div>
 
 
-
+<section id="about_us" class="content">
+  <div class="block">
+    <div class="ico"><img src="<?php echo get_template_directory_uri(); ?>/img/1.svg"></div>
+    <h2>Бесплатная доставка</h2>
+    <span>Бесплатная доставка <br>в пределах МКАД.</span>
+  </div>
+  <div class="block">
+    <div class="ico ico2"><img src="<?php echo get_template_directory_uri(); ?>/img/2.svg"></div>
+    <h2>Профессионалы</h2>
+    <span>Профессиональные,<br> опытные флористы.<br>которые воплотят ваши пожелания<br> в цветочной композиции.</span>
+  </div>
+  <div class="block">
+    <div class="ico ico3"><img src="<?php echo get_template_directory_uri(); ?>/img/3.svg"></div>
+    <h2>Самые свежие цветы</h2>
+    <span>Всегда свежие цветы <br>и оригинальные букеты</span>
+  </div>
+</section>
 
 
 

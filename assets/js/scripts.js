@@ -33,8 +33,8 @@ var $lensSize = (jQuery('#image-block').width()) * .7;
         });
 
       function applyElevateZoom() {
-        var src = jQuery('.thickbox.shown').attr('href');
-        var bigimage = jQuery('.fancybox.shown').attr('href');
+        //var src = jQuery('.thickbox.shown').attr('href');
+        //var bigimage = jQuery('.fancybox.shown').attr('href');
         jQuery('#bigpic').elevateZoom({
     zoomType: 'lens',
     lensShape: 'round',
@@ -72,8 +72,8 @@ var $lensSize = (jQuery('#image-block').width()) * .7;
                 jQuery(this).attr('rel', new_href);
             });
           }
-          jQuery('#views_block slide').removeClass('active');
-          jQuery(this).parent(".slide").addClass('active');
+          jQuery('#views_block .slide').removeClass('active');
+          jQuery(domAAroundImgThumb).parent("li").addClass('active');
         }
       }
 
