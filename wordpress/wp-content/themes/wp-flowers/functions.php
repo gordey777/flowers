@@ -564,7 +564,7 @@ function easy_breadcrumbs() {
 */
 
 // In case we're running standalone, for some odd reason
-if (function_exists('add_action')) {
+/*if (function_exists('add_action')) {
   register_activation_hook(__FILE__, 'top_level_cats_activate');
   register_deactivation_hook(__FILE__, 'top_level_cats_deactivate');
 
@@ -630,7 +630,7 @@ function top_level_cats_remove_cat_base($link) {
   $category_base .= '/';
 
   return preg_replace('|' . $category_base . '|', '', $link, 1);
-}
+}*/
 
 add_action( 'init', 'disable_wp_emojicons' );
 function disable_wp_emojicons() {
@@ -713,5 +713,27 @@ function adjust_woocommerce_get_order_item_totals( $totals ) {
 unset($totals['cart_subtotal'] );
 return $totals;
 }
+
+add_filter('loop_shop_per_page', create_function('$cols', 'return 1;'));
+
+//Постраничная навигация с асинхронной подгрузкой постов в WordPress
+
+function true_load_posts(){
+  $args = unserialize(stripslashes($_POST['query']));
+  $args['paged'] = $_POST['page'] + 1; // следующая страница
+  $args['post_status'] = 'publish';
+  query_posts($args);
+  if( have_posts() ):
+    while( have_posts()):  the_post();
+      @include 'pagination-ajax.php';
+    endwhile;
+  endif;
+  wp_reset_postdata();
+  die();
+}
+
+
+add_action('wp_ajax_loadmore', 'true_load_posts');
+add_action('wp_ajax_nopriv_loadmore', 'true_load_posts');
 
 ?>

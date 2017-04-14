@@ -50,13 +50,14 @@ get_header( 'shop' ); ?>
   'post_type' => 'product',
   //'meta_key' => '_featured',
   //'meta_value' => 'yes',
-  'posts_per_page' => 99,
+  'posts_per_page' => 3,
+  //'paged' => ( get_query_var('paged') ? get_query_var('paged') : 1),
   //'post__in'          => array_merge( array( 0 ), wc_get_product_ids_best_selling() )
   );
 
-  $featured_query = new WP_Query( $args );
+query_posts($args);
 
-  if ($featured_query->have_posts()) : ?>
+  if (have_posts()) : ?>
 
       <?php woocommerce_catalog_ordering(); ?>
 
@@ -64,9 +65,9 @@ get_header( 'shop' ); ?>
 
         <?php woocommerce_product_subcategories(); ?>
 
-        <?php   while ($featured_query->have_posts()) :
+        <?php   while (have_posts()) :
 
-          $featured_query->the_post(); ?>
+          the_post(); ?>
 
           <?php
             /**
@@ -81,102 +82,39 @@ get_header( 'shop' ); ?>
 
         <?php endwhile; // end of the loop. ?>
 
-      <?php woocommerce_product_loop_end(); ?>
 
-      <?php
-        /**
-         * woocommerce_after_shop_loop hook.
-         *
-         * @hooked woocommerce_pagination - 10
-         */
-        do_action( 'woocommerce_after_shop_loop' );
-      ?>
-
-    <?php elseif ( ! woocommerce_product_subcategories( array( 'before' => woocommerce_product_loop_start( false ), 'after' => woocommerce_product_loop_end( false ) ) ) ) : ?>
-
-      <?php
-        /**
-         * woocommerce_no_products_found hook.
-         *
-         * @hooked wc_no_products_found - 10
-         */
-        do_action( 'woocommerce_no_products_found' );
-      ?>
-
-    <?php endif; ?>
-      <?php wp_reset_query(); // Remember to reset
-  ?>
+            <?php if (  $wp_query->max_num_pages > 1 ) : ?>
+              <script>
+                var ajaxurl = '<?php echo site_url() ?>/wp-admin/admin-ajax.php';
+                var true_posts = '<?php echo serialize($wp_query->query_vars); ?>';
+                var current_page = <?php echo (get_query_var('paged')) ? get_query_var('paged') : 1; ?>;
+                var max_pages = '<?php echo $wp_query->max_num_pages; ?>';
+              </script>
 
 
+                  <div id="true_loadmore"  class="btn btn-more">
+
+                    ПОКАЗАТЬ БОЛЬШЕ
+                  </div>
+
+
+            <?php endif; ?>
+
+      <?php wp_reset_query(); ?>
+
+<?php endif; ?>
     </div>
+
+
     <div id="hit" class="tab">
     </div>
+
+
     <div id="sale" class="tab">
-    <?php
-  $args = array(
-  'post_type' => 'product',
-  //'meta_key' => '_featured',
-  //'meta_value' => 'yes',
-  'posts_per_page' => 99,
-  'post__in'          => array_merge( array( 0 ), wc_get_product_ids_on_sale() )
-  );
-
-  $featured_query = new WP_Query( $args );
-
-  if ($featured_query->have_posts()) : ?>
-
-      <?php woocommerce_catalog_ordering(); ?>
-
-      <?php woocommerce_product_loop_start(); ?>
-
-        <?php woocommerce_product_subcategories(); ?>
-
-        <?php   while ($featured_query->have_posts()) :
-
-          $featured_query->the_post(); ?>
-
-          <?php
-            /**
-             * woocommerce_shop_loop hook.
-             *
-             * @hooked WC_Structured_Data::generate_product_data() - 10
-             */
-            do_action( 'woocommerce_shop_loop' );
-          ?>
-
-          <?php wc_get_template_part( 'content', 'product' ); ?>
-
-        <?php endwhile; // end of the loop. ?>
-
-      <?php woocommerce_product_loop_end(); ?>
-
-      <?php
-        /**
-         * woocommerce_after_shop_loop hook.
-         *
-         * @hooked woocommerce_pagination - 10
-         */
-        do_action( 'woocommerce_after_shop_loop' );
-      ?>
-
-    <?php elseif ( ! woocommerce_product_subcategories( array( 'before' => woocommerce_product_loop_start( false ), 'after' => woocommerce_product_loop_end( false ) ) ) ) : ?>
-
-      <?php
-        /**
-         * woocommerce_no_products_found hook.
-         *
-         * @hooked wc_no_products_found - 10
-         */
-        do_action( 'woocommerce_no_products_found' );
-      ?>
-
-    <?php endif; ?>
-      <?php wp_reset_query(); // Remember to reset
-  ?>
     </div>
-    <div class="button_wrap">
-      <div class="button"><a href="http://flowerscaffe.ru/search/allproducts">Показать всё&nbsp;&nbsp;&gt;</a></div>
-    </div>
+<!--     <div class="button_wrap">
+  <div class="button"><a href="http://flowerscaffe.ru/search/allproducts">Показать всё&nbsp;&nbsp;&gt;</a></div>
+</div> -->
 
 
 
