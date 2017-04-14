@@ -23,15 +23,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 ?>
-<a href="/cart" class="header__cart">
-  <img alt="" src="<?php echo get_template_directory_uri(); ?>/img/cart.svg">
 
-
-
-  <?php if ( ! WC()->cart->is_empty() ) : ?>
-    <span class="cart_counter"><?php echo sprintf ('%d', WC()->cart->get_cart_contents_count()) ; ?></span>
-  <?php endif; ?>
-  </a>
 
   <?php do_action( 'woocommerce_before_mini_cart' ); ?>
 <div id="header_cart_list">

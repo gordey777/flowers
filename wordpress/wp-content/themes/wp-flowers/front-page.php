@@ -31,7 +31,7 @@ get_header( 'shop' ); ?>
   <?php endif; ?>
 
 
-  <section id="products" class="content product_tabs_section">
+  <section id="products" class="woocommerce content product_tabs_section">
 
     <header>
       <div class="category_title">Рекомендуем</div>
@@ -46,28 +46,27 @@ get_header( 'shop' ); ?>
     <div id="new" class="tab active">
 
 <?php
+  woocommerce_output_content_wrapper();
+
   $args = array(
   'post_type' => 'product',
   //'meta_key' => '_featured',
   //'meta_value' => 'yes',
   'posts_per_page' => 3,
+  'orderby' => 'date',
   //'paged' => ( get_query_var('paged') ? get_query_var('paged') : 1),
   //'post__in'          => array_merge( array( 0 ), wc_get_product_ids_best_selling() )
   );
 
 query_posts($args);
 
-  if (have_posts()) : ?>
-
-      <?php woocommerce_catalog_ordering(); ?>
+    if ( have_posts() ) : ?>
 
       <?php woocommerce_product_loop_start(); ?>
 
         <?php woocommerce_product_subcategories(); ?>
 
-        <?php   while (have_posts()) :
-
-          the_post(); ?>
+        <?php while ( have_posts() ) : the_post(); ?>
 
           <?php
             /**
@@ -82,8 +81,12 @@ query_posts($args);
 
         <?php endwhile; // end of the loop. ?>
 
-
             <?php if (  $wp_query->max_num_pages > 1 ) : ?>
+
+              <div id="true_loadmore"  class="button">
+                ПОКАЗАТЬ БОЛЬШЕ
+              </div>
+
               <script>
                 var ajaxurl = '<?php echo site_url() ?>/wp-admin/admin-ajax.php';
                 var true_posts = '<?php echo serialize($wp_query->query_vars); ?>';
@@ -91,18 +94,25 @@ query_posts($args);
                 var max_pages = '<?php echo $wp_query->max_num_pages; ?>';
               </script>
 
-
-                  <div id="true_loadmore"  class="btn btn-more">
-
-                    ПОКАЗАТЬ БОЛЬШЕ
-                  </div>
-
-
             <?php endif; ?>
 
-      <?php wp_reset_query(); ?>
+      <?php woocommerce_product_loop_end(); ?>
 
-<?php endif; ?>
+
+
+    <?php elseif ( ! woocommerce_product_subcategories( array( 'before' => woocommerce_product_loop_start( false ), 'after' => woocommerce_product_loop_end( false ) ) ) ) : ?>
+
+      <?php
+        /**
+         * woocommerce_no_products_found hook.
+         *
+         * @hooked wc_no_products_found - 10
+         */
+        do_action( 'woocommerce_no_products_found' );
+      ?>
+
+    <?php endif; ?>
+    <?php woocommerce_output_content_wrapper_end(); ?>
     </div>
 
 

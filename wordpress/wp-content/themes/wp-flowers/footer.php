@@ -13,14 +13,25 @@
       </div>
       <div class="middle">
         <div class="logo"></div>
-        <div class="socials">
-          <a href="https://www.instagram.com/flowerscaffe/" target="blank" class="insta"></a>
-          <a href="whatsapp://send?abidtext=%D0%94%D0%BE%D0%B1%D1%80%D1%8B%D0%B9 %D0%B4%D0%B5%D0%BD%D1%8C!..&amp;phone=+79259743402" class="call"></a>
-        </div>
+        <?php if( have_rows('socials', 53 ) ): ?>
+          <div class="socials">
+            <?php while ( have_rows('socials', 53 ) ) : the_row(); ?>
+              <a class="soc-icons" href="<?php the_sub_field('link'); ?>">
+                <i class="fa <?php the_sub_field('icon'); ?>"></i>
+              </a>
+            <?php  endwhile; ?>
+          </div>
+        <?php endif; ?>
       </div>
       <div>
         <div class="phone">
-          +7 (495) 290-01-94
+          <?php if( have_rows('phone', 53 ) ): ?>
+            <?php while ( have_rows('phone', 53 ) ) : the_row(); ?>
+              <a href="tel:+<?php the_sub_field('phone_link'); ?>">
+                <?php the_sub_field('phone_text'); ?>
+              </a>
+            <?php  endwhile; ?>
+          <?php endif; ?>
         </div>
         <div class="title">Контакты:</div>
         <div>info@flowers-cafe.ru</div>

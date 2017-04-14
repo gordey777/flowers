@@ -370,3 +370,55 @@
     }
   }
 }
+
+#true_loadmore {
+  width: 20%;
+  margin: 30px auto 10px  auto;
+}
+
+
+
+.soc-icons {
+  display: inline-block;
+
+  color: #bdbdbd;
+  i {
+    font-size: 23px;
+
+    display: inline-block;
+    float: left;
+  }
+  span {
+    line-height: 25px;
+
+    display: inline-block;
+    float: left;
+
+    height: 25px;
+
+    vertical-align: middle;
+  }
+  &:hover {
+    color: #fff;
+  }
+}
+
+.head {
+  .soc-icons {
+    color: #5a5a5a;
+    &:hover {
+      color: #eb6a84;
+    }
+    &:nth-child(2n) {
+      &:hover {
+        color: #86ce73;
+      }
+    }
+  }
+}
+
+footer .info div .phone {
+  a {
+    color: #fff;
+  }
+}

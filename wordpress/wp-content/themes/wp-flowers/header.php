@@ -28,8 +28,18 @@
 
 </nav> -->
 
-      <div class="pictograms">
-        <div class="phone_number"><a href="tel:+79259743402">+7 (495) 290 01 94</a></div>
+      <div class="pictograms woocommerce">
+        <div class="phone_number">
+          <?php if( have_rows('phone', 53 ) ): ?>
+            <?php while ( have_rows('phone', 53 ) ) : the_row(); ?>
+              <a href="tel:+<?php the_sub_field('phone_link'); ?>">
+                <?php the_sub_field('phone_text'); ?>
+              </a>
+            <?php  endwhile; ?>
+          <?php endif; ?>
+
+
+        </div>
         <form role="search" method="get" class="woocommerce-product-search" action="<?php echo esc_url( home_url( '/' ) ); ?>">
 
           <input type="search" id="woocommerce-product-search-field-<?php echo isset( $index ) ? absint( $index ) : 0; ?>" class="search-field input_search" placeholder="Введите запрос" value="<?php echo get_search_query(); ?>" name="s" />
@@ -40,14 +50,28 @@
         <a id="search_button" href="/search"><img alt="" src="<?php echo get_template_directory_uri(); ?>/img/lens.svg"></a>
 
         <div class="minicart__wrapp">
-          <?php woocommerce_mini_cart(); ?>
+          <a href="/cart" class="header__cart">
+            <img alt="" src="<?php echo get_template_directory_uri(); ?>/img/cart.svg">
+
+            <?php if ( ! WC()->cart->is_empty() ) : ?>
+              <span class="cart_counter"><?php echo sprintf ('%d', WC()->cart->get_cart_contents_count()) ; ?></span>
+            <?php endif; ?>
+          </a>
+          <?php //woocommerce_mini_cart(); ?>
         </div>
 
-
-        <div class="contact_icons content">
-          <a href="https://www.instagram.com/flowerscaffe/" target="_blank" alt="ig"><img class="hovered" src="<?php echo get_template_directory_uri(); ?>/img/inst.svg"><img src="<?php echo get_template_directory_uri(); ?>/img/insta.svg"></a>
-          <a href="whatsapp://send?text=%D0%94%D0%BE%D0%B1%D1%80%D1%8B%D0%B9 %D0%B4%D0%B5%D0%BD%D1%8C!..&amp;phone=+79259743402" alt="wu"><img class="hovered" src="<?php echo get_template_directory_uri(); ?>/img/whats.svg"><img src="<?php echo get_template_directory_uri(); ?>/img/whatsapp.svg"><span class="smallphone">+79259743402</span></a>
-        </div>
+        <?php if( have_rows('socials', 53 ) ): ?>
+          <div class="contact_icons content">
+            <?php while ( have_rows('socials', 53 ) ) : the_row(); ?>
+              <a class="soc-icons" href="<?php the_sub_field('link'); ?>">
+              <i class="fa <?php the_sub_field('icon'); ?>"></i>
+                <?php if( get_sub_field('title') ): ?>
+                  <span class="smallphone"><?php the_sub_field('title'); ?></span>
+                <?php endif; ?>
+              </a>
+            <?php  endwhile; ?>
+          </div>
+        <?php endif; ?>
       </div>
 
       <div class="logo">

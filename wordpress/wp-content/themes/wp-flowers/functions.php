@@ -714,11 +714,12 @@ unset($totals['cart_subtotal'] );
 return $totals;
 }
 
-add_filter('loop_shop_per_page', create_function('$cols', 'return 1;'));
+add_filter('loop_shop_per_page', create_function('$cols', 'return 3;'));
+
 
 //Постраничная навигация с асинхронной подгрузкой постов в WordPress
 
-function true_load_posts(){
+function true_load_posts() {
   $args = unserialize(stripslashes($_POST['query']));
   $args['paged'] = $_POST['page'] + 1; // следующая страница
   $args['post_status'] = 'publish';
@@ -731,7 +732,6 @@ function true_load_posts(){
   wp_reset_postdata();
   die();
 }
-
 
 add_action('wp_ajax_loadmore', 'true_load_posts');
 add_action('wp_ajax_nopriv_loadmore', 'true_load_posts');
