@@ -4,46 +4,31 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 get_header( 'shop' ); ?>
-  <section class="MP_slider">
-    <ul class="overview">
-      <li style="background-image:url(<?php echo get_template_directory_uri(); ?>/img/slide_UGjGv5.jpg);">
-        <div class="content product_info">
-          <div class="title"></div>
-          <div class="annotation"></div>
-          <a href="#/---" class="button moreinfo">Наша мастерская находится на оптовом цветочном складе<br>У нас ВСЕГДА в наличии ЛЮБЫЕ цветы</a>
-        </div>
-      </li>
-      <li style="background-image:url(<?php echo get_template_directory_uri(); ?>/img/slide_oTYCut.jpg);">
-        <div class="content product_info">
-          <div class="title"></div>
-          <div class="annotation"></div>
-          <a href="#/3333" class="button moreinfo">Наша мастерская находится на оптовом цветочном складе<br>У нас ВСЕГДА в наличии ЛЮБЫЕ цветы</a>
-        </div>
-      </li>
-    </ul>
-    <div class="arrows content">
-      <div class="prev"></div>
-      <div class="next"></div>
-    </div>
-  </section>
 
 
+  <?php if( have_rows('main_slider' ) ): ?>
+    <section class="MP_slider">
+      <ul class="overview">
+        <?php while ( have_rows('main_slider' ) ) : the_row(); ?>
+          <?php $image = get_sub_field('image');
+          if( !empty($image) ): ?>
 
-<!-- <?php if( have_rows('product_slider' ) ): ?>
-
-
-    <?php while ( have_rows('product_slider' ) ) : the_row(); ?>
-        <div class="item">
-          <a href="<?php the_sub_field('product_link'); ?>">
-            <?php $image = get_sub_field('product_image');
-            if( !empty($image) ): ?>
-              <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" />
-            <?php endif; ?>
-          </a>
-        </div>
-      <?php  endwhile; ?>
-
-    <?php endif; ?> -->
+            <li style="background-image:url(<?php echo $image['url']; ?>);">
+              <div class="content product_info">
+                <div class="title"></div>
+                <div class="annotation"></div>
+                <a href="<?php the_sub_field('link'); ?>" class="button moreinfo"><?php the_sub_field('text'); ?></a>
+              </div>
+            </li>
+          <?php endif; ?>
+        <?php  endwhile; ?>
+      </ul>
+      <div class="arrows content">
+        <div class="prev"></div>
+        <div class="next"></div>
+      </div>
+    </section><!--  /.MP_slider -->
+  <?php endif; ?>
 
 
   <section id="products" class="content product_tabs_section">

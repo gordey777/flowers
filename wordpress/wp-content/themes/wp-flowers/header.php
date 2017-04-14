@@ -38,8 +38,12 @@
         </form>
 
         <a id="search_button" href="/search"><img alt="" src="<?php echo get_template_directory_uri(); ?>/img/lens.svg"></a>
-        <a href="#/cart"><img alt="" src="<?php echo get_template_directory_uri(); ?>/img/cart.svg">
-          <span class="cart_counter hidden">0</span></a>
+
+        <div class="minicart__wrapp">
+          <?php woocommerce_mini_cart(); ?>
+        </div>
+
+
         <div class="contact_icons content">
           <a href="https://www.instagram.com/flowerscaffe/" target="_blank" alt="ig"><img class="hovered" src="<?php echo get_template_directory_uri(); ?>/img/inst.svg"><img src="<?php echo get_template_directory_uri(); ?>/img/insta.svg"></a>
           <a href="whatsapp://send?text=%D0%94%D0%BE%D0%B1%D1%80%D1%8B%D0%B9 %D0%B4%D0%B5%D0%BD%D1%8C!..&amp;phone=+79259743402" alt="wu"><img class="hovered" src="<?php echo get_template_directory_uri(); ?>/img/whats.svg"><img src="<?php echo get_template_directory_uri(); ?>/img/whatsapp.svg"><span class="smallphone">+79259743402</span></a>

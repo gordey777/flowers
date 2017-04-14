@@ -16,6 +16,7 @@
 //@import 'base64';
 //@import 'import/print';
 
+@import 'woocommerce';
 @import 'bootstrap.min';
 @import 'jquery.selectbox';
 @import 'jquery-ui.min';
@@ -280,8 +281,8 @@
 
         display: inline-block;
         float: left;
-
         //width: 65%;
+
         margin: 0;
 
         vertical-align: center;
@@ -292,7 +293,6 @@
         line-height: 30px;
 
         float: right;
-
         //width: 33%;
 
         vertical-align: center;
@@ -344,5 +344,29 @@
   img {
     width: auto;
     height: 100%;
+  }
+}
+
+
+.minicart__wrapp {
+  position: relative;
+
+  display: inline-block;
+  #header_cart_list {
+    position: absolute;
+    z-index: 999;
+    top: 24px;
+    right: 0;
+
+    display: none;
+
+    padding: 10px;
+
+    background: #fff;
+  }
+  &:hover {
+    #header_cart_list {
+      display: block;
+    }
   }
 }

@@ -677,7 +677,7 @@ function woocommerce_support() {
 
 
 //DISABLE COUNT SELETOR
-add_filter( 'woocommerce_is_sold_individually', 'wc_remove_all_quantity_fields', 10, 2 );
+/*add_filter( 'woocommerce_is_sold_individually', 'wc_remove_all_quantity_fields', 10, 2 );
 function wc_remove_all_quantity_fields( $return, $product ) {
 switch ( $product->product_type ) :
 case "variable":
@@ -693,7 +693,7 @@ default: // simple product type
 return true;
 break;
 endswitch;
-}
+}*/
 
 remove_action ( 'woocommerce_before_shop_loop', 'woocommerce_result_count', 20 );
 
@@ -707,7 +707,11 @@ add_filter( 'woocommerce_enqueue_styles', '__return_empty_array' );
 
 //add_action( 'wp_enqueue_scripts', 'your_theme_woocommerce_scripts' );
 
+add_filter( 'woocommerce_get_order_item_totals', 'adjust_woocommerce_get_order_item_totals' );
 
-
+function adjust_woocommerce_get_order_item_totals( $totals ) {
+unset($totals['cart_subtotal'] );
+return $totals;
+}
 
 ?>
