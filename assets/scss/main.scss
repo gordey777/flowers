@@ -89,12 +89,12 @@
     float: right;
 
     width: 314px;
-    height: 160px;
+    height: 130px;
 
     text-align: center;
     .logo-img {
-      width: auto;
-      height: 100%;
+      width: 100%;
+      height: auto;
     }
   }
 }
@@ -415,10 +415,44 @@
       }
     }
   }
+  .serv_menu {
+    .submenu {
+      margin-top: 0;
+    }
+  }
 }
 
 footer .info div .phone {
   a {
     color: #fff;
+  }
+}
+
+
+#views_block {
+  .thumbs_nav_hide {
+    display: none;
+  }
+  .thumbs_nav {
+    font-size: 30px;
+
+    position: absolute;
+    z-index: 9999;
+
+    width: 100%;
+    height: 40px;
+
+    cursor: pointer;
+
+    color: #6d6d6d;
+    &:hover {
+      color: #7ed321;
+    }
+  }
+  .views_block_down {
+    bottom: -20px;
+  }
+  .views_block_up {
+    top: -40px;
   }
 }

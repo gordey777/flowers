@@ -12,7 +12,9 @@
         <div>Без выходных: с 10:00 до 22:00</div>
       </div>
       <div class="middle">
+
         <div class="logo"></div>
+
         <?php if( have_rows('socials', 53 ) ): ?>
           <div class="socials">
             <?php while ( have_rows('socials', 53 ) ) : the_row(); ?>
@@ -44,7 +46,9 @@
       <div class="content">&copy; <?php echo date("Y"); ?> Собственность <?php bloginfo('name'); ?>.</div>
     </div>
   </footer>
+
   <div class="overlay"></div>
+
   <aside class="callback">
     <img class="close_button" src="<?php echo get_template_directory_uri(); ?>/img/close_button.svg" alt="X">
     <h3>Заказать обратный звонок</h3>
@@ -66,18 +70,19 @@
 
 
   <script src="<?php echo get_template_directory_uri(); ?>/js/jquery.elevatezoom.min.js" type="text/javascript"></script>
-  <script src="<?php echo get_template_directory_uri(); ?>/js/ctrlnavigate.js" type="text/javascript"></script>
+<!--   <script src="<?php echo get_template_directory_uri(); ?>/js/ctrlnavigate.js" type="text/javascript"></script>
   <script src="<?php echo get_template_directory_uri(); ?>/js/jquery.fitvids.js"></script>
-  <script src="<?php echo get_template_directory_uri(); ?>/js/jquery.easing.1.3.js"></script>
+  <script src="<?php echo get_template_directory_uri(); ?>/js/jquery.easing.1.3.js"></script> -->
   <script src="<?php echo get_template_directory_uri(); ?>/js/jquery.bxslider.js"></script>
-  <script src="<?php echo get_template_directory_uri(); ?>/js/jquery.maskedinput.min.js"></script>
-  <script src="<?php echo get_template_directory_uri(); ?>/js/jquery.selectbox.js"></script>
-  <script src="<?php echo get_template_directory_uri(); ?>/js/jquery-ui.min.js"></script>
-  <script src="<?php echo get_template_directory_uri(); ?>/js/jquery.cookie.js"></script>
+  <script src="<?php echo get_template_directory_uri(); ?>/js/jquery.jcarousellite.js"></script>
+<!--   <script src="<?php echo get_template_directory_uri(); ?>/js/jquery.maskedinput.min.js"></script> -->
+<!--   <script src="<?php echo get_template_directory_uri(); ?>/js/jquery.selectbox.js"></script> -->
+<!--   <script src="<?php echo get_template_directory_uri(); ?>/js/jquery-ui.min.js"></script> -->
+<!--   <script src="<?php echo get_template_directory_uri(); ?>/js/jquery.cookie.js"></script> -->
   <script src="<?php echo get_template_directory_uri(); ?>/js/customslider.js"></script>
   <script src="<?php echo get_template_directory_uri(); ?>/js/bootstrap.min.js"></script>
-  <script src="<?php echo get_template_directory_uri(); ?>/js/flowers.js"></script>
-  <script src="<?php echo get_template_directory_uri(); ?>/js/baloon.js" type="text/javascript"></script>
+  <!-- <script src="<?php echo get_template_directory_uri(); ?>/js/flowers.js"></script> -->
+<!--   <script src="<?php echo get_template_directory_uri(); ?>/js/baloon.js" type="text/javascript"></script> -->
 
   <script>
   let_start = '58e79eafe533c';

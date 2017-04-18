@@ -35,7 +35,7 @@ $wrapper_classes   = apply_filters( 'woocommerce_single_product_image_gallery_cl
 ) );
 ?>
 
-  <figure class="woocommerce-product-gallery__wrapper">
+
     <div id="image-block">
   		<?php
   		$attributes = array(
@@ -56,25 +56,26 @@ $wrapper_classes   = apply_filters( 'woocommerce_single_product_image_gallery_cl
     </div><!-- .image-block -->
 
       <div  id="views_block" class="slider">
-        <span class="up"></span>
+        <div class="thumbs_nav views_block_up thumbs_nav_hide"><i class="fa fa-chevron-up"></i></div>
+
+        <div id="thumbs_list">
         <!-- <div class="scroller up"><span></span></div> -->
-        <ul class="icons" data-size="3">
+          <ul class="icons">
 
-          <!-- First Image -->
-          <?php if ( has_post_thumbnail()) : ?>
-            <li class="thumbnail_item slide active">
-             <a href="<?php echo get_the_post_thumbnail_url( '', 'full' ); ?>" rel="lightbox">
-              <img src="<?php echo get_the_post_thumbnail_url( '', 'small' ); ?>" itemprop="image" title="<?php the_title(); ?>" alt="<?php the_title(); ?>">
-            </a>
-           </li>
-          <?php else:?>
-          <?php endif; ?>
+            <!-- First Image -->
+            <?php if ( has_post_thumbnail()) : ?>
+              <li class="thumbnail_item slide active">
+               <a href="<?php echo get_the_post_thumbnail_url( '', 'full' ); ?>" rel="lightbox">
+                <img src="<?php echo get_the_post_thumbnail_url( '', 'small' ); ?>" itemprop="image" title="<?php the_title(); ?>" alt="<?php the_title(); ?>">
+              </a>
+             </li>
+            <?php else:?>
+            <?php endif; ?>
 
 
-          <?php do_action( 'woocommerce_product_thumbnails' ); ?>
-        </ul>
+            <?php do_action( 'woocommerce_product_thumbnails' ); ?>
+          </ul>
         <!-- <div class="scroller down"><span></span></div> -->
-        <span class="down"></span>
+        </div>
+        <div class="thumbs_nav views_block_down thumbs_nav_hide"><i class="fa fa-chevron-down"></i></div>
       </div><!-- .views_block -->
-
-  </figure>

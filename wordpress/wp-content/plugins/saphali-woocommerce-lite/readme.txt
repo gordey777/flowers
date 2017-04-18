@@ -6,7 +6,7 @@ Donate link: https://money.yandex.ru/to/410011651211340
 Tags: woocommerce, woo commerce russian, russian ruble, ukrainian hryvnia, mod, manadger filds checkout
 Requires at least: WP 3.3 or higher & WooCommerce 1.6.6 or higher
 Tested up to: 4.7
-Stable tag: 1.6.6
+Stable tag: 1.7.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -71,6 +71,12 @@ define('SAPHALI_LITE_SYMBOL', 0 );
 5. Управление количеством колонок в каталоге товаров и рубриках.
 
 == Changelog ==
+
+= 1.7.1 =
+* В версии WC 3.x.x отображение добавленных полей, которые отсутствуют по умолчанию в WC.
+
+= 1.7.0 =
+* Добавлен функционал, который позволяет соотнести поле к методам оплаты. Напр., будет полезно, если некоторые поля не требуется выводить при оплате каким-то методом оплаты, но нужны при оплате через какой-то другой.
 
 = 1.6.6 =
 * Исправлен учет публикации в настройках плагина в версии WC 3.x.x.

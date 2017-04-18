@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the Plugins - WooCommerce - Stable (latest release) package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2017-04-13 12:51:28+0000\n"
+"PO-Revision-Date: 2017-04-17 18:16:18+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -570,7 +570,7 @@ msgstr "Недопустимый ID вариации"
 msgid "Invalid product"
 msgstr "Неверный продукт"
 
-#: includes/class-wc-install.php:901
+#: includes/class-wc-install.php:911
 msgid "Visit premium customer support"
 msgstr "Посетите приемиум поддержку пользователей"
 
@@ -1207,6 +1207,12 @@ msgstr "Очистить все журналы"
 msgid "WP REST API Integration v2"
 msgstr "Интеграция с WP REST API v2"
 
+#. translators: 1: current page 2: total pages
+#: includes/admin/settings/views/html-settings-tax.php:124
+msgctxt "Pagination"
+msgid "%1$s of %2$s"
+msgstr "%1$s из %2$s"
+
 #: includes/admin/settings/views/html-keys-edit.php:41
 msgid "Search for a user&hellip;"
 msgstr "Искать пользователя&hellip;"
@@ -1214,6 +1220,11 @@ msgstr "Искать пользователя&hellip;"
 #: includes/admin/settings/views/html-admin-page-shipping-zones.php:11
 msgid "A shipping zone is a geographic region where a certain set of shipping methods are offered."
 msgstr "Зона отгрузки - это географический район, где предлагается определенный набор способов доставки."
+
+#. translators: %s: shipping method title
+#: includes/admin/settings/views/html-admin-page-shipping-zone-methods.php:126
+msgid "%s Settings"
+msgstr "%s настройки"
 
 #: includes/admin/settings/views/html-admin-page-shipping-zone-methods.php:71
 msgid "Shipping method title"
@@ -1337,6 +1348,16 @@ msgstr "Посмотреть другие заказы &rarr;"
 msgid "Customer IP: %s"
 msgstr "IP клиента: %s"
 
+#. translators: 1: date 2: time
+#: includes/admin/meta-boxes/class-wc-meta-box-order-data.php:196
+msgid "on %1$s @ %2$s"
+msgstr "на %1$s @ %2$s"
+
+#. translators: 1: order type 2: order number
+#: includes/admin/meta-boxes/class-wc-meta-box-order-data.php:172
+msgid "%1$s #%2$s details"
+msgstr "%1$s #%2$s детали"
+
 #: includes/admin/meta-boxes/class-wc-meta-box-order-actions.php:54
 msgid "Resend %s"
 msgstr "Пересылка %s"
@@ -1432,6 +1453,11 @@ msgstr "Строка адреса 1"
 #: includes/class-wc-ajax.php:1262
 msgid "%1$s (#%2$s &ndash; %3$s)"
 msgstr "%1$s (#%2$s &ndash; %3$s)"
+
+#. translators: 1: order and number (i.e. Order #13) 2: user name
+#: includes/admin/class-wc-admin-post-types.php:630
+msgid "%1$s by %2$s"
+msgstr "%1$s от %2$s"
 
 #: includes/admin/class-wc-admin-post-types.php:559
 #: templates/order/order-details-customer.php:46
@@ -6728,7 +6754,7 @@ msgstr "Смена пароля"
 
 #: includes/admin/class-wc-admin-profile.php:88
 #: includes/admin/meta-boxes/class-wc-meta-box-order-data.php:83
-#: includes/class-wc-countries.php:1120 includes/class-wc-emails.php:405
+#: includes/class-wc-countries.php:1120 includes/class-wc-emails.php:411
 #: includes/class-wc-form-handler.php:197
 #: templates/myaccount/form-edit-account.php:40
 #: templates/myaccount/form-login.php:91
@@ -8265,6 +8291,10 @@ msgstr "Ошибка валидации: в PayPal суммы не совпад�
 msgid "Validation error: PayPal currencies do not match (code %s)."
 msgstr "Ошибка проверки: валюты в PayPal не совпадают (код %s)."
 
+#: includes/gateways/paypal/class-wc-gateway-paypal.php:305
+msgid "Refunded %1$s - Refund ID: %2$s"
+msgstr "Возмещено %1$s, идентификатор операции возврата: %2$s"
+
 #: includes/gateways/paypal/class-wc-gateway-paypal.php:212
 msgid "PayPal does not support your store currency."
 msgstr "PayPal не поддерживает валюту вашего магазина."
@@ -9220,23 +9250,23 @@ msgctxt "Admin menu name"
 msgid "Categories"
 msgstr "Категории"
 
-#: includes/class-wc-install.php:901
+#: includes/class-wc-install.php:911
 msgid "Premium support"
 msgstr "Премиум-поддержка"
 
-#: includes/class-wc-install.php:900
+#: includes/class-wc-install.php:910
 msgid "API docs"
 msgstr "Документация по API"
 
-#: includes/class-wc-install.php:900
+#: includes/class-wc-install.php:910
 msgid "View WooCommerce API docs"
 msgstr "Просмотреть документацию по WooCommerce API"
 
-#: includes/class-wc-install.php:899
+#: includes/class-wc-install.php:909
 msgid "View WooCommerce documentation"
 msgstr "Просмотреть документацию WooCommerce "
 
-#: includes/class-wc-install.php:883
+#: includes/class-wc-install.php:893
 msgid "View WooCommerce settings"
 msgstr "Просмотреть настройки WooCommerce "
 
@@ -9394,24 +9424,24 @@ msgstr "Пожалуйста, укажите действующий адрес �
 msgid "Address changed successfully."
 msgstr "Адрес успешно изменён."
 
-#: includes/class-wc-emails.php:517
+#: includes/class-wc-emails.php:523
 msgid "%1$s units of %2$s have been backordered in order #%3$s."
 msgstr "%1$s шт. %2$s предзаказано в заказе №%3$s."
 
-#: includes/class-wc-emails.php:516
+#: includes/class-wc-emails.php:522
 msgid "Product backorder"
 msgstr "Предзаказ товара"
 
 #. translators: %s: product name
-#: includes/class-wc-emails.php:487
+#: includes/class-wc-emails.php:493
 msgid "%s is out of stock."
 msgstr "%s нет в наличии."
 
-#: includes/class-wc-emails.php:485
+#: includes/class-wc-emails.php:491
 msgid "Product out of stock"
 msgstr "Товара нет в наличии"
 
-#: includes/class-wc-emails.php:458
+#: includes/class-wc-emails.php:464
 msgid "Product low in stock"
 msgstr "Товар заканчивается"
 
@@ -9421,7 +9451,7 @@ msgstr "Товар заканчивается"
 msgid "Customer details"
 msgstr "Информация о клиенте"
 
-#: includes/class-wc-emails.php:398
+#: includes/class-wc-emails.php:404
 msgid "Note"
 msgstr "Заметка"
 
@@ -13601,7 +13631,7 @@ msgstr "Оплата через %s"
 
 #: includes/admin/class-wc-admin-profile.php:84
 #: includes/admin/meta-boxes/class-wc-meta-box-order-data.php:86
-#: includes/class-wc-countries.php:1111 includes/class-wc-emails.php:412
+#: includes/class-wc-countries.php:1111 includes/class-wc-emails.php:418
 msgid "Phone"
 msgstr "Телефон"
 
@@ -13846,7 +13876,7 @@ msgstr "Спасибо :)"
 msgid "HTML email template"
 msgstr "Шаблон HTML Email"
 
-#: includes/class-wc-install.php:899
+#: includes/class-wc-install.php:909
 msgid "Docs"
 msgstr "Документация"
 
@@ -14142,10 +14172,6 @@ msgstr "Настройки механизма отслеживания сбро�
 #: includes/api/class-wc-rest-system-status-tools-controller.php:437
 msgid "Tax rates successfully deleted"
 msgstr "Налоговые ставки успешно удалены"
-
-#: includes/api/class-wc-rest-system-status-tools-controller.php:430
-msgid "All missing WooCommerce pages was installed successfully."
-msgstr "Все отсутствующие страницы WooCommerce были установлены."
 
 #: includes/api/class-wc-rest-system-status-tools-controller.php:426
 msgid "Sessions successfully cleared"
@@ -16371,7 +16397,7 @@ msgstr "Запас товара %1$s увеличился с %2$s до %3$s."
 msgid "Order status changed from %1$s to %2$s."
 msgstr "Статус заказа изменен с %s на %s."
 
-#. #-#-#-#-#  tmp-woocommerce.pot (WooCommerce 3.0.2)  #-#-#-#-#
+#. #-#-#-#-#  tmp-woocommerce.pot (WooCommerce 3.0.3)  #-#-#-#-#
 #. Plugin Name of the plugin/theme
 #: includes/admin/class-wc-admin-assets.php:91
 #: includes/admin/class-wc-admin-menus.php:60
@@ -16448,7 +16474,7 @@ msgstr "Предзаказано"
 #: includes/admin/class-wc-admin-menus.php:80
 #: includes/admin/settings/class-wc-settings-api.php:45
 #: includes/admin/views/html-admin-page-status-report.php:432
-#: includes/class-wc-install.php:883
+#: includes/class-wc-install.php:893
 msgid "Settings"
 msgstr "Настройки"
 

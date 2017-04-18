@@ -1,4 +1,4 @@
-//PR Solution, 2016
+
 $(function() {
   //Переключалка табов со статусами на главной
   $('#products .categories > li').click(function() {
@@ -45,54 +45,54 @@ $(function() {
   });
 
   //Вертикальный слайдер картинок товара
-  $('#views_block .slider .up, #views_block .slider .down').click(function() {
-    var slider = $('#views_block .slider .icons'),
-      slider_size = slider.data('size');
-    if (slider.data('inview'))
-      var inview = slider.data('inview'); //Номер картинки, которая находится у верха
-    else
-      var inview = 1;
+  // $('#views_block .slider .up, #views_block .slider .down').click(function() {
+  //   var slider = $('#views_block .slider .icons'),
+  //     slider_size = slider.data('size');
+  //   if (slider.data('inview'))
+  //     var inview = slider.data('inview'); //Номер картинки, которая находится у верха
+  //   else
+  //     var inview = 1;
 
-    if ($(this).hasClass('up') && inview > 1)
-      inview -= 3; //3 - количество пролистываний за раз
-    else if ($(this).hasClass('down') && inview < slider_size - 2)
-      inview += 3;
-    if (inview < 1) inview = 1;
-    if (inview > slider_size - 2) inview = slider_size - 2;
+  //   if ($(this).hasClass('up') && inview > 1)
+  //     inview -= 3; //3 - количество пролистываний за раз
+  //   else if ($(this).hasClass('down') && inview < slider_size - 2)
+  //     inview += 3;
+  //   if (inview < 1) inview = 1;
+  //   if (inview > slider_size - 2) inview = slider_size - 2;
 
-    slider.data('inview', inview);
-    var top = '-' + (inview - 1) * 120 + 'px';
-    $('> li', slider).css({
-      'top': top
-    });
-    $(this).closest('.slider').find('.dot').removeClass('active');
-    var page = Math.ceil((inview + 2) / 3);
-    $(this).closest('.slider').find('.dot[data-dot=' + page + ']').addClass('active');
-  });
+  //   slider.data('inview', inview);
+  //   var top = '-' + (inview - 1) * 120 + 'px';
+  //   $('> li', slider).css({
+  //     'top': top
+  //   });
+  //   $(this).closest('.slider').find('.dot').removeClass('active');
+  //   var page = Math.ceil((inview + 2) / 3);
+  //   $(this).closest('.slider').find('.dot[data-dot=' + page + ']').addClass('active');
+  // });
 
-  $('.product_page .slider').on('wheel', function(ev) {
-    ev.preventDefault();
-    if (ev.originalEvent.deltaY)
-      if (Math.sign(ev.originalEvent.deltaY) > 0)
-        $('.product_page .slider .down').trigger('click');
-      else
-        $('.product_page .slider .up').trigger('click');
-  });
+  // $('.product_page .slider').on('wheel', function(ev) {
+  //   ev.preventDefault();
+  //   if (ev.originalEvent.deltaY)
+  //     if (Math.sign(ev.originalEvent.deltaY) > 0)
+  //       $('.product_page .slider .down').trigger('click');
+  //     else
+  //       $('.product_page .slider .up').trigger('click');
+  // });
 
-  //Листалка слайдера точками
-  $('.main_info .dot').click(function() {
-    $(this).closest('.dots').find('.dot').removeClass('active');
-    $(this).addClass('active');
-    var offs = this.getAttribute('data-dot'),
-      slider = $(this).closest('.slider'),
-      inview = (offs - 1) * 3 + 1;
-    if (inview > $('.icons', slider).data('size') - 2) inview = $('.icons', slider).data('size') - 2;
-    var top = '-' + (inview - 1) * 120 + 'px';
-    slider.find('.icons').data('inview', inview);
-    $('.icons > li', slider).css({
-      'top': top
-    });
-  });
+  // //Листалка слайдера точками
+  // $('.main_info .dot').click(function() {
+  //   $(this).closest('.dots').find('.dot').removeClass('active');
+  //   $(this).addClass('active');
+  //   var offs = this.getAttribute('data-dot'),
+  //     slider = $(this).closest('.slider'),
+  //     inview = (offs - 1) * 3 + 1;
+  //   if (inview > $('.icons', slider).data('size') - 2) inview = $('.icons', slider).data('size') - 2;
+  //   var top = '-' + (inview - 1) * 120 + 'px';
+  //   slider.find('.icons').data('inview', inview);
+  //   $('.icons > li', slider).css({
+  //     'top': top
+  //   });
+  // });
 
 
 
@@ -140,3 +140,5 @@ function search_toggle() {
     $('.pictograms form').hide();
   }
 }
+
+

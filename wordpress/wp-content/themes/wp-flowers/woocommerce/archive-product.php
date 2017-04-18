@@ -142,5 +142,25 @@ get_header( 'shop' ); ?>
 	?>
     </div>
   </section>
+    <?php if( have_rows('block_about_us', 53 ) ): ?>
+
+
+    <section id="about_us" class="content">
+      <?php while ( have_rows('block_about_us', 53 ) ) : the_row(); ?>
+
+        <div class="block">
+          <div class="ico">
+            <?php $image = get_sub_field('image');
+            if( !empty($image) ): ?>
+              <img src="<?php echo $image['url']; ?>">
+            <?php endif; ?>
+          </div>
+          <h2><?php the_sub_field('title'); ?></h2>
+          <span><?php the_sub_field('text'); ?></span>
+        </div>
+      <?php  endwhile; ?>
+    </section>
+
+  <?php endif; ?>
 
 <?php get_footer( 'shop' ); ?>

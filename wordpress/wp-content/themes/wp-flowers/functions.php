@@ -653,6 +653,21 @@ function disable_emojicons_tinymce( $plugins ) {
   }
 }
 
+// запрет обновления выборочных плагинов
+function filter_plugin_updates( $update ) {
+    global $DISABLE_UPDATE; // см. wp-config.php
+    if( !is_array($DISABLE_UPDATE) || count($DISABLE_UPDATE) == 0 ){  return $update;  }
+    foreach( $update->response as $name => $val ){
+        foreach( $DISABLE_UPDATE as $plugin ){
+            if( stripos($name,$plugin) !== false ){
+                unset( $update->response[ $name ] );
+            }
+        }
+    }
+    return $update;
+}
+add_filter( 'site_transient_update_plugins', 'filter_plugin_updates' );
+
 
 add_theme_support( 'woocommerce' );
 
@@ -697,8 +712,11 @@ endswitch;
 
 remove_action ( 'woocommerce_before_shop_loop', 'woocommerce_result_count', 20 );
 
+remove_action ( 'woocommerce_single_product_summary', 'woocommerce_template_single_title', 5 );
 
-//woocommerse styles
+
+
+//disable woocommerse styles
 add_filter( 'woocommerce_enqueue_styles', '__return_empty_array' );
 
 /*function your_theme_woocommerce_scripts() {
@@ -736,4 +754,10 @@ function true_load_posts() {
 add_action('wp_ajax_loadmore', 'true_load_posts');
 add_action('wp_ajax_nopriv_loadmore', 'true_load_posts');
 
+
+
+
+
 ?>
+
+

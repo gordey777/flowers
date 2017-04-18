@@ -1,4 +1,4 @@
-// (C) Netlogic, 2003
+/*// (C) Netlogic, 2003
 
 function CreateBaloon() {
 	baloon = document.createElement('DIV');
@@ -113,7 +113,7 @@ function ValidateForms() {
 									}
 									break;
 
-								default:	
+								default:
 									if(!isPattern(pattern, value)) {
 										return ValidateNotice(form.elements[i]);
 									}
@@ -223,3 +223,4 @@ if (window.attachEvent) {
 	document.addEventListener("DOMContentLoaded", init_balloon, false);
 }
 
+*/

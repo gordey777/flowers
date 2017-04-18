@@ -40,6 +40,7 @@ if ( ! defined( 'ABSPATH' ) ) {
       <div class="title"><?php the_title(); ?></div>
       <div class="infoblock">
         <div class="main_info">
+  <figure class="woocommerce-product-gallery__wrapper">
 
   <?php
     /**
@@ -50,6 +51,7 @@ if ( ! defined( 'ABSPATH' ) ) {
      */
     do_action( 'woocommerce_before_single_product_summary' );
   ?>
+  </figure>
 
 
           <section class="product_detail">
@@ -81,23 +83,26 @@ if ( ! defined( 'ABSPATH' ) ) {
       </div>
 
 
-<section id="about_us" class="content">
-  <div class="block">
-    <div class="ico"><img src="<?php echo get_template_directory_uri(); ?>/img/1.svg"></div>
-    <h2>Бесплатная доставка</h2>
-    <span>Бесплатная доставка <br>в пределах МКАД.</span>
-  </div>
-  <div class="block">
-    <div class="ico ico2"><img src="<?php echo get_template_directory_uri(); ?>/img/2.svg"></div>
-    <h2>Профессионалы</h2>
-    <span>Профессиональные,<br> опытные флористы.<br>которые воплотят ваши пожелания<br> в цветочной композиции.</span>
-  </div>
-  <div class="block">
-    <div class="ico ico3"><img src="<?php echo get_template_directory_uri(); ?>/img/3.svg"></div>
-    <h2>Самые свежие цветы</h2>
-    <span>Всегда свежие цветы <br>и оригинальные букеты</span>
-  </div>
-</section>
+  <?php if( have_rows('block_about_us', 53 ) ): ?>
+
+
+    <section id="about_us" class="content">
+      <?php while ( have_rows('block_about_us', 53 ) ) : the_row(); ?>
+
+        <div class="block">
+          <div class="ico">
+            <?php $image = get_sub_field('image');
+            if( !empty($image) ): ?>
+              <img src="<?php echo $image['url']; ?>">
+            <?php endif; ?>
+          </div>
+          <h2><?php the_sub_field('title'); ?></h2>
+          <span><?php the_sub_field('text'); ?></span>
+        </div>
+      <?php  endwhile; ?>
+    </section>
+
+  <?php endif; ?>
 
 
 

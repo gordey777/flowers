@@ -25,20 +25,20 @@ if (typeof jQuery === 'undefined') {
 
 jQuery(document).ready(function() {
   var $lensSize = (jQuery('#image-block').width()) * .7;
-  jQuery('#bigpic').elevateZoom({
+  jQuery('#bigpic').ezPlus({
     zoomType: 'lens',
     lensShape: 'round',
-    lensSize: $lensSize,
+    lensSize: 350,
     scrollZoom: true,
   });
 
   function applyElevateZoom() {
     //var src = jQuery('.thickbox.shown').attr('href');
     //var bigimage = jQuery('.fancybox.shown').attr('href');
-    jQuery('#bigpic').elevateZoom({
+    jQuery('#bigpic').ezPlus({
       zoomType: 'lens',
       lensShape: 'round',
-      lensSize: $lensSize,
+      lensSize: 350,
       scrollZoom: true,
     });
   }
@@ -78,29 +78,139 @@ jQuery(document).ready(function() {
   }
 
 
+
+  //thumbs slider
+  jQuery(function() {
+    var countLi = jQuery('#thumbs_list>ul>li').size();
+
+    if (countLi > 3) {
+
+      jQuery('.thumbs_nav').removeClass('thumbs_nav_hide');
+
+      jQuery("#thumbs_list").jCarouselLite({
+        btnNext: ".views_block_down",
+        btnPrev: ".views_block_up",
+        vertical: true,
+
+        visible: 3,
+        start: 0,
+      });
+    }
+  });
+
 });
 
+
+//Ajax
 jQuery(function($) {
   $('#true_loadmore').click(function() {
-    $(this).text('Загружаю...'); // изменяем текст кнопки, вы также можете добавить прелоадер
+    $(this).text('Загружаю...');
     var data = {
       'action': 'loadmore',
       'query': true_posts,
       'page': current_page
     };
     $.ajax({
-      url: ajaxurl, // обработчик
-      data: data, // данные
-      type: 'POST', // тип запроса
+      url: ajaxurl,
+      data: data,
+      type: 'POST',
       success: function(data) {
         if (data) {
-          $('#true_loadmore').text('Загрузить ещё').before(data); // вставляем новые посты
-          current_page++; // увеличиваем номер страницы на единицу
-          if (current_page == max_pages) $("#true_loadmore").remove(); // если последняя страница, удаляем кнопку
+          $('#true_loadmore').text('Показать ещё').before(data);
+          current_page++;
+          if (current_page == max_pages) $("#true_loadmore").remove();
         } else {
-          $('#true_loadmore').remove(); // если мы дошли до последней страницы постов, скроем кнопку
+          $('#true_loadmore').remove();
         }
       }
     });
   });
 });
+
+
+
+
+$(function() {
+  //Переключалка табов со статусами на главной
+  $('#products .categories > li').click(function() {
+    $(this).parent().find('.active').removeClass('active');
+    $(this).addClass('active');
+    var tab = this.getAttribute('data-tab');
+    $('#products .tab').removeClass('active');
+    $('#' + tab).addClass('active');
+    //  $('#products .button_wrap .button').show();
+    //  if ($('#products .tab.active > *').length < 6
+    //    || typeof $('#' + tab)[0].page != 'undefined'
+    //    && $('#' + tab)[0].page == $('#' + tab)[0].pages_count)
+    //      $('#products .button_wrap .button').hide();
+    //
+  });
+  /*
+    $('body').on('click', '.product .slide', function() {
+      if ($(this).hasClass('active')) return 1;
+      $(this).closest('.slider').find('.active').removeClass('active');
+      $(this).addClass('active');
+      var src = $('img', this).data('bigimg');
+      $(this).parent().next().find('img')[0].src = src;
+    });*/
+
+
+  $('.MP_slider .overview').bxSlider({
+    mode: 'horizontal',
+    captions: false,
+    easing: 'linear',
+    startSlide: 0,
+    infiniteLoop: true,
+    pager: true,
+    auto: true,
+    autoControls: false,
+    controls: true,
+    video: true,
+    pause: 16000,
+    speed: 800,
+    useCSS: true,
+    nextSelector: '.MP_slider .next',
+    prevSelector: '.MP_slider .prev',
+  });
+
+  //Отдельное поведение раскрывающихся пунктов меню
+  $('.serv_menu li:has(ul.inner) a').click(function(e) {
+    if (!this.opened) {
+      e.preventDefault();
+      e.stopPropagation();
+      this.opened = true;
+      $('~ ul.inner', this).show();
+    }
+  });
+  $('.serv_menu ul.inner').click(function(e) {
+    e.stopPropagation();
+  });
+  $('body').click(function() {
+    $('.serv_menu ul.inner').hide();
+    $('.serv_menu li:has(ul.inner) a').each(function() {
+      this.opened = false;
+    });
+  })
+
+
+  $('#search_button').click(function(e) {
+    e.preventDefault();
+    $('#input_search').val('');
+    search_toggle();
+  });
+});
+
+
+
+//Скрытие/показ строки поиска
+function search_toggle() {
+  if (!$('.pictograms form:visible').length) {
+    $('#search_button').addClass('active');
+    $('.phone_number').hide();
+    $('.pictograms form').fadeIn(300).find('input').focus();
+  } else {
+    $('#search_button').removeClass('active');
+    $('.phone_number').show();
+    $('.pictograms form').hide();
+  }
+}
