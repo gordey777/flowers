@@ -83,9 +83,10 @@ query_posts($args);
 
             <?php if (  $wp_query->max_num_pages > 1 ) : ?>
 
-              <div id="true_loadmore"  class="button">
-                ПОКАЗАТЬ БОЛЬШЕ
-              </div>
+                <div id="true_loadmore"  class="button">
+                  ПОКАЗАТЬ БОЛЬШЕ
+                  <i class="fa fa-chevron-down"></i>
+                </div>
 
               <script>
                 var ajaxurl = '<?php echo site_url() ?>/wp-admin/admin-ajax.php';

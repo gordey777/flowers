@@ -666,6 +666,8 @@ function filter_plugin_updates( $update ) {
     }
     return $update;
 }
+
+
 add_filter( 'site_transient_update_plugins', 'filter_plugin_updates' );
 
 
@@ -691,46 +693,25 @@ function woocommerce_support() {
 }
 
 
-//DISABLE COUNT SELETOR
-/*add_filter( 'woocommerce_is_sold_individually', 'wc_remove_all_quantity_fields', 10, 2 );
-function wc_remove_all_quantity_fields( $return, $product ) {
-switch ( $product->product_type ) :
-case "variable":
-return true;
-break;
-case "grouped":
-return true;
-break;
-case "external":
-return true;
-break;
-default: // simple product type
-return true;
-break;
-endswitch;
-}*/
+
 
 remove_action ( 'woocommerce_before_shop_loop', 'woocommerce_result_count', 20 );
 
 remove_action ( 'woocommerce_single_product_summary', 'woocommerce_template_single_title', 5 );
+remove_action ( 'woocommerce_single_product_summary', 'woocommerce_template_single_price', 10 );
+remove_action ( 'woocommerce_single_product_summary', 'woocommerce_template_single_excerpt', 20 );
+//remove_action ( 'woocommerce_single_product_summary', 'woocommerce_template_single_add_to_cart', 30 );
+remove_action ( 'woocommerce_single_product_summary', 'woocommerce_template_single_meta', 40 );
+remove_action ( 'woocommerce_single_product_summary', 'woocommerce_template_single_sharing', 50 );
+
+
+
 
 
 
 //disable woocommerse styles
 add_filter( 'woocommerce_enqueue_styles', '__return_empty_array' );
 
-/*function your_theme_woocommerce_scripts() {
-  wp_enqueue_style( 'custom-woocommerce-style', get_template_directory_uri() . '/css/woocommerce-custom.css' );
-}*/
-
-//add_action( 'wp_enqueue_scripts', 'your_theme_woocommerce_scripts' );
-
-add_filter( 'woocommerce_get_order_item_totals', 'adjust_woocommerce_get_order_item_totals' );
-
-function adjust_woocommerce_get_order_item_totals( $totals ) {
-unset($totals['cart_subtotal'] );
-return $totals;
-}
 
 add_filter('loop_shop_per_page', create_function('$cols', 'return 3;'));
 
@@ -756,8 +737,4 @@ add_action('wp_ajax_nopriv_loadmore', 'true_load_posts');
 
 
 
-
-
 ?>
-
-

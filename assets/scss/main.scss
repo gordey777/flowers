@@ -1,9 +1,9 @@
-//@import 'import/reset';
-//@import 'import/variables';
-//@import 'import/buttons';
-//@import 'import/forms';
-//@import 'import/lists';
-//@import 'import/tables';
+
+
+//
+
+//
+
 //@import 'import/mixin';
 //@import 'import/wordpress';
 
@@ -17,6 +17,14 @@
 //@import 'import/print';
 
 @import 'woocommerce';
+
+@import 'import/reset';
+@import 'import/variables';
+@import 'import/forms';
+@import 'import/tables';
+@import 'import/buttons';
+//@import 'import/lists';
+
 @import 'bootstrap.min';
 @import 'jquery.selectbox';
 @import 'jquery-ui.min';
@@ -142,11 +150,12 @@
 
 
 .products_list {
+
   .product {
     display: inline-block;
 
     width: 271px;
-    height: 360px;
+    //height: 360px;
     margin-right: 174px;
     &:hover .desc {
       .name {
@@ -271,6 +280,7 @@
     .add_to_cart_button {
       display: inline-block;
 
+      width: 100%;
       padding: 8px 5px;
     }
     .woocommerce-LoopProduct-link {
@@ -372,10 +382,21 @@
 }
 
 #true_loadmore {
-  width: 20%;
-  margin: 30px auto 10px  auto;
-}
+  width: 30%;
+  margin: 30px 35% 10px  35%;
+  i {
+    font-size: 25px;
 
+    margin-left: 10px;
+  }
+}
+.loadmore_wrapp {
+  display: inline-block;
+
+  width: 100%;
+
+  text-align: center;
+}
 
 
 .soc-icons {
@@ -455,4 +476,92 @@ footer .info div .phone {
   .views_block_up {
     top: -40px;
   }
+}
+
+.priceblock {
+  .single_add_to_cart_button {
+    width: 100%;
+  }
+  .price-item {
+    width: 100%;
+    .price {
+      display: inline-block;
+
+      width: 100%;
+      del,
+      ins {
+        display: inline-block;
+        float: left;
+
+        width: 50%;
+      }
+      ins {
+        text-decoration: none;
+
+        color: #ea3d5a;
+      }
+    }
+  }
+  .article {
+    width: 100%;
+    margin-bottom: 20px;
+    padding-top: 10px;
+    > span {
+      display: inline-block;
+
+      width: 100%;
+    }
+  }
+}
+
+.woocommerce-shipping-fields,
+.woocommerce-billing-fields {
+  .form-row {
+    display: inline-block;
+    float: left;
+
+    width: 33%;
+  }
+}
+
+
+.woocommerce-account-fields {
+  display: inline-block;
+  //width: 100%;
+  .form-row {
+    line-height: 2;
+
+    position: relative;
+
+    display: inline-block;
+    float: left;
+    //width: 100%;
+
+    vertical-align: middle;
+    .woocommerce-form__label {
+      position: relative;
+
+      display: inline-block;
+
+      width: 100%;
+      #createaccount {
+        position: absolute;
+        top: 8px;
+
+        display: inline-block;
+      }
+      span {
+        display: inline-block;
+        float: left;
+
+        margin-left: 20px;
+      }
+    }
+  }
+}
+
+.add_cart_btn {
+  font-size: 25px;
+
+  margin-left: 15px;
 }

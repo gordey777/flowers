@@ -24,11 +24,11 @@ if (typeof jQuery === 'undefined') {
 
 
 jQuery(document).ready(function() {
-  var $lensSize = (jQuery('#image-block').width()) * .7;
+  var $lensSize = (jQuery('#image-block').width()) * .5;
   jQuery('#bigpic').ezPlus({
     zoomType: 'lens',
     lensShape: 'round',
-    lensSize: 350,
+    lensSize: $lensSize,
     scrollZoom: true,
   });
 
@@ -38,7 +38,7 @@ jQuery(document).ready(function() {
     jQuery('#bigpic').ezPlus({
       zoomType: 'lens',
       lensShape: 'round',
-      lensSize: 350,
+      lensSize: $lensSize,
       scrollZoom: true,
     });
   }
