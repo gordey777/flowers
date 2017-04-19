@@ -37,27 +37,30 @@
               </a>
             <?php  endwhile; ?>
           <?php endif; ?>
-
-
         </div>
-        <form role="search" method="get" class="woocommerce-product-search" action="<?php echo esc_url( home_url( '/' ) ); ?>">
 
+        <form role="search" method="get" class="woocommerce-product-search" action="<?php echo esc_url( home_url( '/' ) ); ?>">
           <input type="search" id="woocommerce-product-search-field-<?php echo isset( $index ) ? absint( $index ) : 0; ?>" class="search-field input_search" placeholder="Введите запрос" value="<?php echo get_search_query(); ?>" name="s" />
-          <input type="submit" value="<?php echo esc_attr_x( 'Search', 'submit button', 'woocommerce' ); ?>" />
+          <!-- <input type="submit" value="<?php echo esc_attr_x( 'Search', 'submit button', 'woocommerce' ); ?>" /> -->
           <input type="hidden" name="post_type" value="product" />
         </form>
 
         <a id="search_button" href="/search"><img alt="" src="<?php echo get_template_directory_uri(); ?>/img/lens.svg"></a>
 
         <div class="minicart__wrapp">
-          <a href="/cart" class="header__cart">
-            <img alt="" src="<?php echo get_template_directory_uri(); ?>/img/cart.svg">
 
-            <?php if ( ! WC()->cart->is_empty() ) : ?>
+          <a href="<?php echo  WC()->cart->get_cart_url(); ?>" class="cart_totals header__cart">
+            <img src="<?php echo get_template_directory_uri(); ?>/img/cart.svg">
+
+            <?php if ( ! WC()->cart->is_empty() ) { ?>
               <span class="cart_counter"><?php echo sprintf ('%d', WC()->cart->get_cart_contents_count()) ; ?></span>
-            <?php endif; ?>
+            <?php } ?>
           </a>
-          <?php //woocommerce_mini_cart(); ?>
+
+          <span class="header__cart">
+            <img src="<?php echo get_template_directory_uri(); ?>/img/cart.svg">
+          </span>
+
         </div>
 
         <?php if( have_rows('socials', 53 ) ): ?>
@@ -92,5 +95,8 @@
       </div>
     </div>
   </section>
+
+
+
 
 

@@ -70,24 +70,24 @@
 
 
   <script src="<?php echo get_template_directory_uri(); ?>/js/jquery.elevatezoom.min.js" type="text/javascript"></script>
-<!--   <script src="<?php echo get_template_directory_uri(); ?>/js/ctrlnavigate.js" type="text/javascript"></script>
+  <!-- <script src="<?php echo get_template_directory_uri(); ?>/js/ctrlnavigate.js" type="text/javascript"></script> -->
   <script src="<?php echo get_template_directory_uri(); ?>/js/jquery.fitvids.js"></script>
-  <script src="<?php echo get_template_directory_uri(); ?>/js/jquery.easing.1.3.js"></script> -->
+  <!-- <script src="<?php echo get_template_directory_uri(); ?>/js/jquery.easing.1.3.js"></script> -->
   <script src="<?php echo get_template_directory_uri(); ?>/js/jquery.bxslider.js"></script>
   <script src="<?php echo get_template_directory_uri(); ?>/js/jquery.jcarousellite.js"></script>
-<!--   <script src="<?php echo get_template_directory_uri(); ?>/js/jquery.maskedinput.min.js"></script> -->
-<!--   <script src="<?php echo get_template_directory_uri(); ?>/js/jquery.selectbox.js"></script> -->
-<!--   <script src="<?php echo get_template_directory_uri(); ?>/js/jquery-ui.min.js"></script> -->
-<!--   <script src="<?php echo get_template_directory_uri(); ?>/js/jquery.cookie.js"></script> -->
-  <script src="<?php echo get_template_directory_uri(); ?>/js/customslider.js"></script>
+  <!-- <script src="<?php echo get_template_directory_uri(); ?>/js/jquery.maskedinput.min.js"></script> -->
+  <!-- <script src="<?php echo get_template_directory_uri(); ?>/js/jquery.selectbox.js"></script> -->
+  <!-- <script src="<?php echo get_template_directory_uri(); ?>/js/jquery-ui.min.js"></script> -->
+  <!-- <script src="<?php echo get_template_directory_uri(); ?>/js/jquery.cookie.js"></script> -->
+  <!-- <script src="<?php echo get_template_directory_uri(); ?>/js/customslider.js"></script> -->
   <script src="<?php echo get_template_directory_uri(); ?>/js/bootstrap.min.js"></script>
   <!-- <script src="<?php echo get_template_directory_uri(); ?>/js/flowers.js"></script> -->
-<!--   <script src="<?php echo get_template_directory_uri(); ?>/js/baloon.js" type="text/javascript"></script> -->
+  <!-- <script src="<?php echo get_template_directory_uri(); ?>/js/baloon.js" type="text/javascript"></script> -->
 
-  <script>
+  <!-- <script>
   let_start = '58e79eafe533c';
   </script>
-  <script src="<?php echo get_template_directory_uri(); ?>/js/jquery.autocomplete-min.js"></script>
+  <script src="<?php echo get_template_directory_uri(); ?>/js/jquery.autocomplete-min.js"></script> -->
 
 </body>
 </html>

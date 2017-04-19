@@ -303,8 +303,8 @@ nav {
     }
   }
   #search_button {
-    width: 100px;
-    min-width: 100px;
+    width: 60px;
+    min-width: 60px;
     &.active {
       border-left: none;
       > img {
@@ -641,7 +641,8 @@ nav {
   }
   &:active,
   &:focus {
-    color: #86ce73;
+    //color: #86ce73;
+    background: darken(#86ce73, 20%);
     outline: none;
   }
   &:hover {
